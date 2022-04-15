@@ -15,11 +15,11 @@
     <link href="<?=$asset?>/css/base.css" rel="stylesheet" type="text/css">
 
     <!-- REVOLUTION STYLE SHEETS -->
-    <link rel="stylesheet" type="text/css" href="rev-slider/revolution/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
-    <link rel="stylesheet" type="text/css" href="rev-slider/revolution/fonts/font-awesome/css/font-awesome.css">
-    <link rel="stylesheet" type="text/css" href="rev-slider/revolution/css/settings.css">
-    <link rel="stylesheet" type="text/css" href="rev-slider/revolution/css/layers.css">
-    <link rel="stylesheet" type="text/css" href="rev-slider/revolution/css/navigation.css">
+    <link rel="stylesheet" type="text/css" href="<?=$asset?>/rev-slider/revolution/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
+    <link rel="stylesheet" type="text/css" href="<?=$asset?>/rev-slider/revolution/fonts/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="<?=$asset?>/rev-slider/revolution/css/settings.css">
+    <link rel="stylesheet" type="text/css" href="<?=$asset?>/rev-slider/revolution/css/layers.css">
+    <link rel="stylesheet" type="text/css" href="<?=$asset?>/rev-slider/revolution/css/navigation.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -200,7 +200,7 @@
               data-easein="Power4.easeOut"
               data-easeout="Power4.easeOut" 
               data-masterspeed="1000"
-              data-thumb="../../assets/images/waterfal-100x50.jpg"
+              data-thumb="<?=$asset?>/images/waterfal-100x50.jpg"
               data-rotate="0"
               data-saveperformance="off"
               data-title="Slide"
@@ -218,7 +218,7 @@
               data-slicey_shadow="0px 0px 50px 0px transparent"
               >
               <!-- MAIN IMAGE -->
-              <img src="images/banner_slider_2.jpg"  alt="" 
+              <img src="<?=$asset?>/images/banner_slider_2.jpg"  alt="" 
                 data-bgposition="center center"
                 data-kenburns="on"
                 data-duration="7000"
@@ -1082,28 +1082,28 @@
     <script src="<?=$asset?>/js/jquery.min.js"></script>
     <script src="<?=$asset?>/js/bootstrap.min.js"></script>
     <script src="<?=$asset?>/js/bootstrap-dropdownhover.min.js"></script>
-    <script type="text/javascript" src="js/init.js"></script>
-    <script type="text/javascript" src="js/owl.carousel.min.js"></script>    
-    <script type="text/javascript" src="js/waypoints.min.js"></script>
-    <script type="text/javascript" src="js/jquery.counterup.min.js"></script>    
-    <script type='text/javascript' src="js/jquery.fancybox.js?v=2.1.5"></script>
-    <script type="text/javascript" src="js/jquery.appear.min.js"></script>    
-    <script type="text/javascript" src="js/jquery.easypiechart.min.js"></script>
-    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="<?=$asset?>/js/init.js"></script>
+    <script type="text/javascript" src="<?=$asset?>/js/owl.carousel.min.js"></script>    
+    <script type="text/javascript" src="<?=$asset?>/js/waypoints.min.js"></script>
+    <script type="text/javascript" src="<?=$asset?>/js/jquery.counterup.min.js"></script>    
+    <script type='text/javascript' src="<?=$asset?>/js/jquery.fancybox.js?v=2.1.5"></script>
+    <script type="text/javascript" src="<?=$asset?>/js/jquery.appear.min.js"></script>    
+    <script type="text/javascript" src="<?=$asset?>/js/jquery.easypiechart.min.js"></script>
+    <script type="text/javascript" src="<?=$asset?>/js/jquery.validate.min.js"></script>
 
     <!-- REVOLUTION JS FILES -->
     <script type="text/javascript" src="rev-slider/revolution/js/jquery.themepunch.tools.min.js"></script>
     <script type="text/javascript" src="rev-slider/revolution/js/jquery.themepunch.revolution.min.js"></script>
 
     <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->  
-    <script type="text/javascript" src="rev-slider/revolution/js/extensions/revolution.extension.actions.min.js"></script>
-    <script type="text/javascript" src="rev-slider/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
-    <script type="text/javascript" src="rev-slider/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
-    <script type="text/javascript" src="rev-slider/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
-    <script type="text/javascript" src="rev-slider/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
-    <script type="text/javascript" src="rev-slider/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
-    <script type="text/javascript" src="rev-slider/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
-    <script type="text/javascript" src="rev-slider/revolution/js/extensions/revolution.extension.video.min.js"></script>
+    <script type="text/javascript" src="<?=$asset?>/rev-slider/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+    <script type="text/javascript" src="<?=$asset?>/rev-slider/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+    <script type="text/javascript" src="<?=$asset?>/rev-slider/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+    <script type="text/javascript" src="<?=$asset?>/rev-slider/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script type="text/javascript" src="<?=$asset?>/rev-slider/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script type="text/javascript" src="<?=$asset?>/rev-slider/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+    <script type="text/javascript" src="<?=$asset?>/rev-slider/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script type="text/javascript" src="<?=$asset?>/rev-slider/revolution/js/extensions/revolution.extension.video.min.js"></script>
 
     <!-- Masonary Plugin -->
     <script type="text/javascript" src="<?=$asset?>/js/jquery.cubeportfolio.min.js"></script>
