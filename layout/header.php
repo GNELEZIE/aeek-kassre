@@ -38,6 +38,9 @@
 .bg-white{
     background:#fff !important;
 }
+.bg-orange{
+    background:#ff5c00 !important;
+}
 header.style-3 div.menu-fixed::after{
     background : #ff460000 !important;
 }
@@ -73,11 +76,20 @@ header.style-3 div.menu-fixed::before {
         transform: translateY(80px) !important;
     }
     .banner {
-        height: 339px !important;
+        height: 296px !important;
     }
 	.banner .banner-overlay {
-    height: 249px !important;
+    height: 296px !important;
 }
+    .banner-content{
+        padding-top: 60px !important;
+    }
+.cb-slideshow{
+    margin-bottom: 0 !important;
+}
+
+
+
 }
 
 

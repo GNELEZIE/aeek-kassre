@@ -22,38 +22,15 @@ require_once 'layout/header.php';
                 </span>
                 <div></div>
          </li>
-
         </ul>
         <div class="banner-overlay">
-            <div class="banner-content p-3">
-<!--                <ul id="countdown" class="countdown">-->
-<!--                    <li class="clock-item"><span class="count-number days">00</span>-->
-<!--                        <p class="days_text count-text">Days</p>-->
-<!--                    </li>-->
-<!---->
-<!--                    <li class="clock-item"><span class="count-number hours">00</span>-->
-<!--                        <p class="hours_text count-text">Hours</p>-->
-<!--                    </li>-->
-<!---->
-<!--                    <li class="clock-item"><span class="count-number minutes">00</span>-->
-<!--                        <p class="minutes_text count-text">Min</p>-->
-<!--                    </li>-->
-<!---->
-<!--                    <li class="clock-item"><span class="count-number seconds">00</span>-->
-<!--                        <p class="seconds_text count-text">Sec</p>-->
-<!--                    </li>-->
-<!--                </ul>-->
-                 
-                <h2>SORTIE DETENTE 2022
-DEUXIÈME ÉDITION</h2>
-                <ul>
-                    <li><span class="flaticon-tool"></span>24-29 December, 2021</li>
-                    <li><span class="flaticon-signs"></span>21 King Street, Dhaka 1205, Bangladesh.</li>
+            <div class="banner-content p-3"><h2><span class="bg-orange p-2 mb-3">Sortie détente 2022 deuxième édition</span></h2>
+                <ul class="mt-4">
+                    <li><span class="flaticon-tool"></span>Le 19 Juin 2022</li>
+                    <li><span class="flaticon-signs"></span>Plage de Jacqueville</li>
                 </ul>
             </div>
-            <!-- banner-content -->
         </div>
-        <!-- overlay -->
     </section>
 
 
