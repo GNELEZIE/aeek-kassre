@@ -34,25 +34,25 @@ require_once 'layout/header.php';
     </section>
 
 
-    <section class="banner banner-11">
-        <div class="container">
-            <div class="row">
-                <div class="banner-flex">
-                    <div class="right-content">
-                        <img src="<?=$asset?>/images/12-09-18/banner-home.png" alt="banner image">
-                    </div>
-                    <div class="left-content text-center">
-
-                        <h2 class="title1 font-50 line-height-1-5">Sortie detente 2022</h2>
-                        <h2 class="title2 font-45 line-height-1-5">Deuxième édition</h2>
-                        <h2 class="title3 font-30 line-height-1-5">le 19  juin à jacqueville</h2>
-                        <h2 class="title4 font-30 line-height-1-5">Il reste <span>35 </span>places</h2>
-                        <a href="#" class="custom-btn">Inscription toi</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!--    <section class="banner banner-11">-->
+<!--        <div class="container">-->
+<!--            <div class="row">-->
+<!--                <div class="banner-flex">-->
+<!--                    <div class="right-content">-->
+<!--                        <img src="--><?//=$asset?><!--/images/12-09-18/banner-home.png" alt="banner image">-->
+<!--                    </div>-->
+<!--                    <div class="left-content text-center">-->
+<!---->
+<!--                        <h2 class="title1 font-50 line-height-1-5">Sortie detente 2022</h2>-->
+<!--                        <h2 class="title2 font-45 line-height-1-5">Deuxième édition</h2>-->
+<!--                        <h2 class="title3 font-30 line-height-1-5">le 19  juin à jacqueville</h2>-->
+<!--                        <h2 class="title4 font-30 line-height-1-5">Il reste <span>35 </span>places</h2>-->
+<!--                        <a href="#" class="custom-btn">Inscription toi</a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </section>-->
     <section class="about about-two py-5" style="background: rgba(232, 246, 255, 0.69)">
         <div class="container py-5">
             <div class="row">
