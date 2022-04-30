@@ -83,8 +83,8 @@ require_once 'layout/header.php';
         </div>
         <!-- container -->
     </section>
-    <section class="home-blog home-blog-10 padding-120 side-image2" style="background-color: #f7fbff !important;">
-        <div class="container">
+    <section class="home-blog home-blog-10 side-image2" style="background-color: #f7fbff !important;">
+        <div class="container p-5">
             <div class="row">
                 <div class="section-header style2">
                     <h3>Notre actualité</h3>
@@ -93,7 +93,7 @@ require_once 'layout/header.php';
                 </div>
 
                 <div class="section-wrapper row">
-                    <div class="col-lg-6">
+                    <div class="col-lg-4">
                         <div class="blog-item">
                             <div class="blog-thumb">
                                 <a href="#"><img src="<?=$asset?>/media/aeek-2.jpeg" alt="thumb"></a>
@@ -126,7 +126,38 @@ require_once 'layout/header.php';
                         </div>
                     </div>
 
-                    <div class="col-lg-6">
+                    <div class="col-lg-4">
+                        <div class="blog-item">
+                            <div class="blog-thumb">
+                                <a href="#"><img src="<?=$asset?>/media/aeek-2.jpeg" alt="thumb"></a>
+                            </div>
+                            <div class="blog-content">
+                                <ul class="meta-post style2">
+                                    <li><img src="<?=$asset?>/images/12-09-18/blog/icon/share.png" alt="icon">
+                                        <ul class="social-media-list">
+                                            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                                            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                                            <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                                            <li><a class="rss" href="#"><i class="fa fa-rss"></i></a></li>
+                                        </ul>
+                                    </li>
+                                    <li><img src="<?=$asset?>/images/12-09-18/blog/icon/comment.png" alt="icon"></li>
+                                    <li><img src="<?=$asset?>/images/12-09-18/blog/icon/heart.png" alt="icon"></li>
+                                </ul>
+                                <div class="content-part">
+                                    <h4><a href="#">awesome post High Ecent Nche With Prin</a></h4>
+                                    <ul class="post-meta">
+                                        <li>By: <a href="#">Smith Sha</a></li>
+                                        <li>Category: <a href="#">Business</a></li>
+                                        <li>Date: <a href="#">14 June, 2021</a></li>
+                                    </ul>
+                                    <p>Qntegate Supple Chans Through Markey Poston Bestng Practces Chains Through Markey
+                                        Postonn Bestin Practces etve Fashion Fashion Economically And Sound Qources</p>
+                                    <a href="#" class="default-button">Lire plus</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div><div class="col-lg-4">
                         <div class="blog-item">
                             <div class="blog-thumb">
                                 <a href="#"><img src="<?=$asset?>/media/aeek-2.jpeg" alt="thumb"></a>
