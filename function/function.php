@@ -1,8 +1,59 @@
 <?php
 
+// Ecrire les mois de l'année en français
 
+
+if(!function_exists('month_fr')){
+    function month_fr($mois){
+        $mounth_french = array(
+            "01"=> "Janvier",
+            "02"=> "Février",
+            "03"=> "Mars",
+            "04"=> "Avril",
+            "05"=> "Mai",
+            "06"=> "Juin",
+            "07"=> "Juillet",
+            "08"=> "Août",
+            "09"=> "Septembre",
+            "10"=> "Octobre",
+            "11"=> "Novembre",
+            "12"=> "Décembre"
+        );
+
+        if(!$mounth_french[$mois] ) return $mois;
+        else return $mounth_french[$mois];
+
+    }
+}
+if(!function_exists('days_fr')){
+    function days_fr($mois){
+        $mounth_french = array(
+            "1"=> "Lundi",
+            "2"=> "Mardi",
+            "3"=> "Mercredi",
+            "4"=> "Jeudi",
+            "5"=> "Vendredi",
+            "6"=> "Samedi",
+            "7"=> "Dimanche"
+
+        );
+
+        if(!$mounth_french[$mois] ) return $mois;
+        else return $mounth_french[$mois];
+
+    }
+}
+
+if(!function_exists('date_lettre')){
+    function date_lettre($date){
+        $fin = date('H', strtotime($date));
+        $fins =($fin +4).'h:00';
+        $dts = days_fr(date('N', strtotime($date))).' '. date('d', strtotime($date)).' '. month_fr(date('m', strtotime($date))).' '. date('Y', strtotime($date)).' de '. date('H', strtotime($date)).'h:00 à '.$fins;
+
+        return $dts;
+    }
+}
 // page active
-
 if(!function_exists('page_active')){
     function page_active($file){
         $page = array_pop(explode('/',$_SERVER['SCRIPT_NAME']));

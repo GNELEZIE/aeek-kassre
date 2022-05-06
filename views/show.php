@@ -1,4 +1,15 @@
 <?php
+if(isset($doc[1]) and !isset($doc[2])) {
+
+    $liste = $article->getArticleBySlug($doc[1]);
+
+    if ($data = $liste->fetch()) {
+        $authors = $admin->getAdminById($data['user_id'])->fetch();
+    } else {
+        header('location:' . $domaine . '/error');
+        exit();
+    }
+}
 require_once 'layout/header.php';
 ?>
 
@@ -8,63 +19,21 @@ require_once 'layout/header.php';
 <div class="col-lg-8 col-md-12 col-xs-12 sticky-widget">
     <div class="blog-item single">
         <div class="image">
-            <img src="<?=$asset?>/media/aeek-2.jpeg" alt="Blog image" class="img-responsive">
+            <img src="<?=$domaine?>/uploads/<?=$data['couverture'];?>" alt="Blog image" class="img-responsive">
         </div>
         <!-- image -->
         <div class="blog-content">
             <div>
                 <ul class="post-meta">
-                    <li><a href="#"><span>24</span>December, 2021</a></li>
-                    <li><span class="icon flaticon-user"></span><a href="#">by admin</a></li>
+                    <li><a href="#"><span><?=(date('N', strtotime($data['date_article'])))?></span><?=month_fr(date('m', strtotime($data['date_article']))).','.date('Y', strtotime($data['date_article']))?></a></li>
+                    <li><span class="icon flaticon-user"></span><a href="#">Par <?=$authors['nom']?></a></li>
                     <li><span class="icon flaticon-like"></span><a href="#">12 Like</a></li>
                     <li><span class="icon flaticon-chat"></span><a href="#">24 Comment</a></li>
                 </ul>
                 <!-- post-meta -->
                 <div class="content">
-                    <h4>Competely actualze cententrc anstaled base</h4>
-                    <p>Completelly actuaze cent centric coloration and idea saharing without
-                        installed an base awesome theme of event aresourcescreative and awesome
-                        event template Completely actuaze cent centric coloration and idea saharing
-                        without installed and basie awesome theme of event aresourcescreative and
-                        awesome aevent template Completelly actuaze cent centric coloration and idea
-                        saharing without instaled and base awesome theme of event aresourcescretive
-                        and awesome event template Completely actuaze cent centric coloration and
-                        idea saharing without installed and basie awesome theme of that event
-                        aresourcescreative and awesome event template.</p>
-                    <blockquote>Completely actuaze cent centric coloration and idea saharng without
-                        an installed awesome theme of event aresourcescreatve awesome template and
-                        completely and awesome event template and awesome event template.
-                    </blockquote>
-                    <p>Completelly actuaze cent centric coloration and idea saharing without
-                        installed an base awesome theme of event aresourcescreative and awesome
-                        event template Completely actuaze cent centric coloration and idea saharing
-                        without installed and basie awesome theme of event aresourcescreative and
-                        awesome aevent template Completelly actuaze cent centric coloration and idea
-                        saharing without instaled and base awesome theme of event aresourcescretive
-                        and awesome event template Completely actuaze cent centric coloration and
-                        idea saharing without installed and basie awesome theme of that event
-                        aresourcescreative and awesome event template.</p>
-
-                    <div class="single-images">
-                        <div class="left"><img src="<?=$asset?>/media/aeek-3.jpeg"
-                                               alt="Blog image" class="img-responsive"></div>
-                        <div class="right">
-                            <div class="top"><img src="<?=$asset?>/media/aeek-1.jpeg"
-                                                  alt="Blog image" class="img-responsive"></div>
-                            <div class="bottom"><img src="<?=$asset?>/media/aeek-2.jpeg"
-                                                     alt="Blog image" class="img-responsive"></div>
-                        </div>
-                    </div>
-
-                    <p>Completelly actuaze cent centric coloration and idea saharing without
-                        installed an base awesome theme of event aresourcescreative and awesome
-                        event template Completely actuaze cent centric coloration and idea saharing
-                        without installed and basie awesome theme of event aresourcescreative and
-                        awesome aevent template Completelly actuaze cent centric coloration and idea
-                        saharing without instaled and base awesome theme of event aresourcescretive
-                        and awesome event template Completely actuaze cent centric coloration and
-                        idea saharing without installed and basie awesome theme of that event
-                        aresourcescreative and awesome event template.</p>
+                    <h4><?=html_entity_decode(stripslashes($data['titre']));?></h4>
+                    <div class="cont"><?=html_entity_decode(stripslashes($data['description']));?></div>
                 </div>
                 <!-- content -->
             </div>

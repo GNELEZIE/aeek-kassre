@@ -1,4 +1,11 @@
 <?php
+
+
+$liste = $article->getAllArticle();
+
+
+
+
 require_once 'layout/header.php';
 ?>
 <section class="banner banner-blog banner-five">
@@ -23,82 +30,38 @@ require_once 'layout/header.php';
 <div class="container">
 <div class="row">
 <div class="col-lg-8 col-md-12 col-xs-12 sticky-widget">
-    <div class="blog-item">
-        <div class="image">
-            <a href="<?=$domaine?>/show"><img src="<?=$asset?>/media/aeek-2.jpeg" alt="Blog image"
-                                       class="img-responsive"></a>
-        </div>
-        <div class="blog-content">
-            <div>
-                <ul class="post-meta">
-                    <li><a href="#"><span>24</span>December, 2021</a></li>
-                    <li><span class="icon flaticon-user"></span><a href="#">by admin</a></li>
-                    <li><span class="icon flaticon-like"></span><a href="#">12 Like</a></li>
-                    <li><span class="icon flaticon-chat"></span><a href="#">24 Comment</a></li>
-                </ul>
-                <div class="content">
-                    <h4><a href="<?=$domaine?>/show">Competely actualze cententrc anstaled base</a></h4>
-                    <p>Completelly actuaze cent centric coloration and idea saharing without
-                        installed an base awesome theme of event aresourcescreative and awesome
-                        event template Completely actuaze cent centric coloration and idea saharing
-                        without installed and basie awesome theme of event aresourcescreative and
-                        awesome event template.</p>
-                    <a href="<?=$domaine?>/show" class="default-button">Lire la suite</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="blog-item">
-        <div class="image">
-            <a href="<?=$domaine?>/show"><img src="<?=$asset?>/media/aeek-2.jpeg" alt="Blog image"
-                                       class="img-responsive"></a>
-        </div>
-        <div class="blog-content">
-            <div>
-                <ul class="post-meta">
-                    <li><a href="#"><span>24</span>December, 2021</a></li>
-                    <li><span class="icon flaticon-user"></span><a href="#">by admin</a></li>
-                    <li><span class="icon flaticon-like"></span><a href="#">12 Like</a></li>
-                    <li><span class="icon flaticon-chat"></span><a href="#">24 Comment</a></li>
-                </ul>
-                <div class="content">
-                    <h4><a href="<?=$domaine?>/show">Competely actualze cententrc anstaled base</a></h4>
-                    <p>Completelly actuaze cent centric coloration and idea saharing without
-                        installed an base awesome theme of event aresourcescreative and awesome
-                        event template Completely actuaze cent centric coloration and idea saharing
-                        without installed and basie awesome theme of event aresourcescreative and
-                        awesome event template.</p>
-                    <a href="<?=$domaine?>/show" class="default-button">Lire la suite</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="blog-item">
-        <div class="image">
-            <a href="<?=$domaine?>/show"><img src="<?=$asset?>/media/aeek-2.jpeg" alt="Blog image"
-                                       class="img-responsive"></a>
-        </div>
-        <div class="blog-content">
-            <div>
-                <ul class="post-meta">
-                    <li><a href="#"><span>24</span>December, 2021</a></li>
-                    <li><span class="icon flaticon-user"></span><a href="#">by admin</a></li>
-                    <li><span class="icon flaticon-like"></span><a href="#">12 Like</a></li>
-                    <li><span class="icon flaticon-chat"></span><a href="#">24 Comment</a></li>
-                </ul>
-                <div class="content">
-                    <h4><a href="<?=$domaine?>/show">Competely actualze cententrc anstaled base</a></h4>
-                    <p>Completelly actuaze cent centric coloration and idea saharing without
-                        installed an base awesome theme of event aresourcescreative and awesome
-                        event template Completely actuaze cent centric coloration and idea saharing
-                        without installed and basie awesome theme of event aresourcescreative and
-                        awesome event template.</p>
-                    <a href="<?=$domaine?>/show" class="default-button">Lire la suite</a>
-                </div>
-            </div>
-        </div>
 
-    </div>
+    <?php
+    while($data = $liste->fetch()){
+ $authors = $admin->getAdminById($data['user_id'])->fetch();
+
+    ?>
+        <div class="blog-item">
+            <div class="image">
+                <a href="<?=$domaine?>/show"><img src="<?=$domaine?>/uploads/<?=$data['couverture'];?>" alt="Blog image" class="img-responsive"></a>
+            </div>
+            <div class="blog-content">
+                <div>
+                    <ul class="post-meta">
+                        <li><a href="#"><span><?=(date('N', strtotime($data['date_article'])))?></span><?=month_fr(date('m', strtotime($data['date_article']))).','.date('Y', strtotime($data['date_article']))?></a></li>
+                        <li><span class="icon flaticon-user"></span><a href="#">Par <?=$authors['nom']?></a></li>
+                        <li><span class="icon flaticon-like"></span><a href="#">12 Like</a></li>
+                        <li><span class="icon flaticon-chat"></span><a href="#">24 Comment</a></li>
+                    </ul>
+                    <div class="content">
+                        <h4><a href="<?=$domaine?>/show/<?=$data['slug']?>"><?=html_entity_decode(stripslashes($data['titre']));?></a></h4>
+                      <div class="cont pt-3"> <?=reduit_text(html_entity_decode(stripslashes($data['description'])),'500');?></div>
+                        <a href="<?=$domaine?>/show/<?=$data['slug']?>" class="default-button">Lire la suite</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php
+    }
+    ?>
+
+
+
 
     <ul class="pagination">
         <li><a href="#"><i class="fa fa-angle-double-left" aria-hidden="true"></i></a></li>
