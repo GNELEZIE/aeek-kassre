@@ -32,24 +32,45 @@ class Reponse{
         $rs = $this->bdd->query($query);
         return $rs;
     }
-    public function getReponseById($id){
+
+    public function getReponseByArticleId($id){
         $query = "SELECT * FROM reponse
-        WHERE comment_id = :id";
+        WHERE article_id = :id";
         $rs = $this->bdd->prepare($query);
         $rs->execute(array(
             "id" => $id
         ));
         return $rs;
     }
-
-//Count
-    public function nbReponses(){
-
-        $query = "SELECT COUNT(*) as nb FROM reponse";
-        $rs = $this->bdd->query($query);
-
+    public function getReponseById($com_id,$art_id){
+        $query = "SELECT * FROM reponse
+        WHERE comment_id = :com_id AND article_id = :art_id";
+        $rs = $this->bdd->prepare($query);
+        $rs->execute(array(
+            "com_id" => $com_id,
+            "art_id" => $art_id
+        ));
         return $rs;
     }
+
+//Count
+    public function nbReponses($com_id,$art_id){
+        $query = "SELECT COUNT(*) as nb FROM reponse
+        WHERE comment_id = :com_id AND article_id = :art_id";
+        $rs = $this->bdd->prepare($query);
+        $rs->execute(array(
+            "com_id" => $com_id,
+            "art_id" => $art_id
+        ));
+        return $rs;
+    }
+//    public function nbReponses(){
+//
+//        $query = "SELECT COUNT(*) as nb FROM reponse";
+//        $rs = $this->bdd->query($query);
+//
+//        return $rs;
+//    }
 //Update
 
 

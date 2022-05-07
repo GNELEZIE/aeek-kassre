@@ -10,10 +10,12 @@ if(isset($doc[1]) and !isset($doc[2])) {
         exit();
     }
 }
-$comments = $comment->getAllComment();
-$nbComments = $comment->nbComments()->fetch();
-$nbReponses = $reponse->nbReponses()->fetch();
-$nbrComt = $nbComments['nb'] + $nbReponses['nb'];
+$comments = $comment->getCommentById($data['id_article']);
+//$comments = $comment->getAllComment();
+$nbComments = $comment->nbComment($data['id_article'])->fetch();
+//$comt = $comments->fetch();
+//$nbReponses = $reponse->nbReponses($comt['id_comment'],$data['id_article'])->fetch();
+$nbrComt = $nbComments['nb'];
 //require_once 'controller/save.comment.php';
 //require_once 'controller/save.reponse.php';
 $token = openssl_random_pseudo_bytes(16);
@@ -85,7 +87,8 @@ require_once 'layout/header.php';
                     <ul>
                         <?php
                         while($com = $comments->fetch()){
-                            $rps = $reponse->getReponseById($com['id_comment']);
+
+                            $rps = $reponse->getReponseById($com['id_comment'],$data['id_article']);
                             if($com['nom'] == ''){
                                 $nom ='Anonyme';
                             }else{
@@ -114,6 +117,7 @@ require_once 'layout/header.php';
                                                         <div class="col-lg-4 col-md-4 col-xs-12">
                                                             <input type="email" name="emailR" id="emailR" placeholder="Email*" class="comment-input input-style" required>
                                                             <input type="hidden" class="form-control " name="formkey" value="<?= $token ?>">
+                                                            <input type="hidden" class="form-control " name="article_id" value="<?= $data['id_article'] ?>">
                                                             <input type="hidden" class="form-control " name="com_id" id="com_id" value="<?=$com['id_comment']?>">
                                                         </div>
                                                     </div>
@@ -149,6 +153,7 @@ require_once 'layout/header.php';
                                                                 <div class="row">
                                                                     <div class="col-lg-4 col-md-4 col-xs-12">
                                                                         <input type="text" name="nomR" id="nomR" placeholder="Nom*" class="comment-input input-style" required>
+                                                                        <input type="hidden" class="form-control " name="article_id" value="<?= $data['id_article'] ?>">
                                                                     </div>
                                                                     <div class="col-lg-4 col-md-4 col-xs-12">
                                                                         <input type="email" name="emailR" id="emailR" placeholder="Email*" class="comment-input input-style" required>
@@ -191,6 +196,7 @@ require_once 'layout/header.php';
                             <div class="col-lg-4 col-md-4 col-xs-12">
                                 <input type="email" name="email" id="email" placeholder="Email*" class="comment-input input-style" required>
                                 <input type="hidden" class="form-control " name="formkey" value="<?= $token ?>">
+                                <input type="hidden" class="form-control " name="article_id" value="<?= $data['id_article'] ?>">
                             </div>
                         </div>
                         <textarea rows="6" name="message" id="message" class="comment-input input-style" placeholder="Message"></textarea>

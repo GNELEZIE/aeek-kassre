@@ -7,15 +7,16 @@ class Comment{
 
 
     //Create
-    public function addComment($date_comment,$nom,$email,$message){
-        $query = "INSERT INTO comment(date_comment,nom,email,message)
-            VALUES (:date_comment,:nom,:email,:message)";
+    public function addComment($date_comment,$nom,$email,$message,$article_id){
+        $query = "INSERT INTO comment(date_comment,nom,email,message,article_id)
+            VALUES (:date_comment,:nom,:email,:message,:article_id)";
         $rs = $this->bdd->prepare($query);
         $rs->execute(array(
             "date_comment" => $date_comment,
             "nom" => $nom,
             "email" => $email,
-            "message" => $message
+            "message" => $message,
+            "article_id" => $article_id
         ));
         $nb = $rs->rowCount();
         if($nb > 0){
@@ -31,7 +32,15 @@ class Comment{
         $rs = $this->bdd->query($query);
         return $rs;
     }
-
+    public function getCommentById($id){
+        $query = "SELECT * FROM comment
+        WHERE article_id = :id";
+        $rs = $this->bdd->prepare($query);
+        $rs->execute(array(
+            "id" => $id
+        ));
+        return $rs;
+    }
 
 //Count
     public function nbComments(){
@@ -39,6 +48,15 @@ class Comment{
         $query = "SELECT COUNT(*) as nb FROM comment";
         $rs = $this->bdd->query($query);
 
+        return $rs;
+    }
+    public function nbComment($id){
+        $query = "SELECT  COUNT(*) as nb FROM comment
+        WHERE article_id = :id";
+        $rs = $this->bdd->prepare($query);
+        $rs->execute(array(
+            "id" => $id
+        ));
         return $rs;
     }
 //Update

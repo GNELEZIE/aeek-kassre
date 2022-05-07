@@ -1,7 +1,7 @@
 <?php
 session_start();
 $info = '';
-if(isset($_POST['nom']) and isset($_POST['email']) and isset($_POST['message']) and isset($_SESSION['myformkey']) and isset($_POST['formkey']) and $_SESSION['myformkey'] == $_POST['formkey']){
+if(isset($_POST['nom']) and isset($_POST['email']) and isset($_POST['message']) and isset($_POST['article_id']) and isset($_SESSION['myformkey']) and isset($_POST['formkey']) and $_SESSION['myformkey'] == $_POST['formkey']){
     extract($_POST);
     //Include function
     include_once "../function/function.php";
@@ -14,7 +14,8 @@ if(isset($_POST['nom']) and isset($_POST['email']) and isset($_POST['message']) 
     $nom = htmlentities(trim(addslashes($nom)));
     $email = htmlentities(trim(addslashes($email)));
     $message = htmlentities(trim(addslashes($message)));
-    $save= $comment->addComment($dateGmt,$nom,$email,$message);
+    $article_id = htmlentities(trim(addslashes($article_id)));
+    $save= $comment->addComment($dateGmt,$nom,$email,$message,$article_id);
 
     if($save > 0){
         $info = 'ok';
