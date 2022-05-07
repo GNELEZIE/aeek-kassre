@@ -30,8 +30,18 @@
     <link href="<?=$asset?>/css/font-size.css" rel="stylesheet">
     <link href="<?=$asset?>/css/btn.css" rel="stylesheet">
     <link href="<?=$asset?>/plugins/ticker/css/main.css" rel="stylesheet">
+    <link href="<?=$asset?>/plugins/sweetalert/sweet-alert.css" rel="stylesheet" />
 
     <style>
+        .input-style{
+            border: 2px solid #ced4da !important;
+            border-radius: 6px !important;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: sans-serif  !important;
+            text-transform: initial;
+            font-weight: inherit;
+        }
         #nt-example2 li{
             font-size: 16px !important;
         }

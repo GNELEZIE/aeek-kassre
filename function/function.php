@@ -1,7 +1,7 @@
 <?php
 
 // Ecrire les mois de l'année en français
-
+$dateGmt = gmdate('Y-m-d H:i');
 
 if(!function_exists('month_fr')){
     function month_fr($mois){
@@ -46,10 +46,7 @@ if(!function_exists('days_fr')){
 
 if(!function_exists('date_lettre')){
     function date_lettre($date){
-        $fin = date('H', strtotime($date));
-        $fins =($fin +4).'h:00';
-        $dts = days_fr(date('N', strtotime($date))).' '. date('d', strtotime($date)).' '. month_fr(date('m', strtotime($date))).' '. date('Y', strtotime($date)).' de '. date('H', strtotime($date)).'h:00 à '.$fins;
-
+        $dts = days_fr(date('N', strtotime($date))).' '. date('d', strtotime($date)).' '. month_fr(date('m', strtotime($date))).' '. date('Y', strtotime($date)).' à '. date('H', strtotime($date)).'h';
         return $dts;
     }
 }
