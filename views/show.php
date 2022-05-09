@@ -2,6 +2,7 @@
 if(isset($doc[1]) and !isset($doc[2])) {
 
     $liste = $article->getArticleBySlug($doc[1]);
+    $listeNbr = $article->getArticleBySlugNbr($doc[1])->fetch();
 
     if ($data = $liste->fetch()) {
         $authors = $admin->getAdminById($data['user_id'])->fetch();
@@ -11,11 +12,19 @@ if(isset($doc[1]) and !isset($doc[2])) {
     }
 }
 $comments = $comment->getCommentById($data['id_article']);
+$commentsNb = $comment->getCommentByIdNb($data['id_article'])->fetch();
 //$comments = $comment->getAllComment();
-$nbComments = $comment->nbComment($data['id_article'])->fetch();
+
 //$comt = $comments->fetch();
-//$nbReponses = $reponse->nbReponses($comt['id_comment'],$data['id_article'])->fetch();
-$nbrComt = $nbComments['nb'];
+
+if($nbCom = $comments->fetch()){
+    $nbComments = $comment->nbComment($data['id_article'])->fetch();
+    $nbReponses = $reponse->nbReponses($commentsNb['id_comment'])->fetch();
+    $nbrComt = $nbComments['nb'] + $nbReponses['nb'];
+}else{
+    $nbrComt = 0;
+}
+
 //require_once 'controller/save.comment.php';
 //require_once 'controller/save.reponse.php';
 $token = openssl_random_pseudo_bytes(16);
@@ -40,11 +49,23 @@ require_once 'layout/header.php';
                                 <li><a href="#"><span><?=(date('N', strtotime($data['date_article'])))?></span><?=month_fr(date('m', strtotime($data['date_article']))).','.date('Y', strtotime($data['date_article']))?></a></li>
                                 <li><span class="icon flaticon-user"></span><a href="#">Par <?=$authors['nom']?></a></li>
                                 <li><span class="icon flaticon-like"></span><a href="#">12 Like</a></li>
-                                <li><span class="icon flaticon-chat"></span><a href="#">24 Comment</a></li>
+                                <li><span class="icon flaticon-chat"></span>
+                                    <a href="<?=$domaine?>/show/<?=$data['slug']?>">
+                                        <?=$nbrComt?>
+                                        <?php
+                                        if($nbrComt > 1){
+                                            echo 'Commentaires';
+                                        }else{
+                                            echo 'Commentaire';
+                                        }
+                                        ?>
+
+                                    </a>
+                                </li>
                             </ul>
                             <!-- post-meta -->
                             <div class="content">
-                                <h4><?=html_entity_decode(stripslashes($data['titre']));?></h4>
+                                <h4 style="line-height: 1.5;"><?=html_entity_decode(stripslashes($data['titre']));?></h4>
                                 <div class="cont"><?=html_entity_decode(stripslashes($data['description']));?></div>
                             </div>
                             <!-- content -->
@@ -59,7 +80,7 @@ require_once 'layout/header.php';
                             <li><a href="#">Marketing</a></li>
                         </ul>
                         <ul class="share event-social">
-                            <li><span>Share Post :</span></li>
+                            <li><span>Partager sur :</span></li>
                             <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                             <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                             <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -159,6 +180,7 @@ require_once 'layout/header.php';
                                                                         <input type="email" name="emailR" id="emailR" placeholder="Email*" class="comment-input input-style" required>
                                                                         <input type="hidden" class="form-control " name="formkey" value="<?= $token ?>">
                                                                         <input type="hidden" class="form-control " name="com_id" id="com_id" value="<?=$com['id_comment']?>">
+                                                                        <input type="hidden" class="form-control " name="article_id" id="article_id" value="<?=$data['id_article']?>">
                                                                     </div>
                                                                 </div>
                                                                 <textarea rows="3" name="messageR" id="messageR" class="comment-input input-style" placeholder="Message"></textarea>

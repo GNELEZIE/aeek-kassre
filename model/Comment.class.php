@@ -32,7 +32,17 @@ class Comment{
         $rs = $this->bdd->query($query);
         return $rs;
     }
+
     public function getCommentById($id){
+        $query = "SELECT * FROM comment
+        WHERE article_id = :id";
+        $rs = $this->bdd->prepare($query);
+        $rs->execute(array(
+            "id" => $id
+        ));
+        return $rs;
+    }
+    public function getCommentByIdNb($id){
         $query = "SELECT * FROM comment
         WHERE article_id = :id";
         $rs = $this->bdd->prepare($query);

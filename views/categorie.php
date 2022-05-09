@@ -5,8 +5,6 @@ if(isset($doc[1])){
     $return = $doc[0];
 }
 
-
-
 if(isset($_GET['page']) and is_numeric($_GET['page'])){
     $numPage = $_GET['page'];
     $fin = 4 * $numPage;
@@ -17,7 +15,25 @@ if(isset($_GET['page']) and is_numeric($_GET['page'])){
     $fin = 4;
 }
 
-$res = $article->getAllNbrArticle();
+
+if(isset($doc[1]) and !isset($doc[2])) {
+    $cat = $categorie->getCategorieBySlug($doc[1]);
+    if($catIno = $cat->fetch()){
+        $res = $article->getNbrCatByArticle($catIno['id_categorie']);
+        $liste = $article->getAllNbrArticlesCat($debut,$fin,$catIno['id_categorie']);
+        $categ = html_entity_decode(stripslashes($catIno['nom']));
+    }else{
+        header('location:' . $domaine . '/error');
+        exit();
+    }
+}else{
+    $res = $article->getAllNbrArticle();
+    $liste = $article->getAllNbrArticles($debut,$fin);
+    $categ = "Actualité";
+}
+
+
+
 
 if($nbre = $res->fetch()){
     $pages = $nbre['nb']/4;
@@ -25,7 +41,7 @@ if($nbre = $res->fetch()){
     $pages = 1;
 }
 $myPage = '/blog';
-$liste = $article->getAllNbrArticles($debut,$fin);
+
 
 
 require_once 'layout/header.php';
@@ -33,7 +49,7 @@ require_once 'layout/header.php';
 <section class="banner banner-blog banner-five">
     <div class="banner-overlay"></div>
 
-    <div class="p-3 text-center position-text"><h2><span class="bg-orange px-3 mb-3 text-white"> Actualité</span></h2>
+    <div class="p-3 text-center position-text"><h2><span class="bg-orange px-3 mb-3 text-white"> <?=$categ?></span></h2>
     </div>
 </section>
 <section class="page-header">
@@ -56,22 +72,15 @@ require_once 'layout/header.php';
     <?php
     while($data = $liste->fetch()){
     $authors = $admin->getAdminById($data['user_id'])->fetch();
-        $commentExiste = $comment->getCommentById($data['id_article']);
-
-        if($nbCom = $commentExiste->fetch()){
-            $nbComments = $comment->nbComment($data['id_article'])->fetch();
-            $nbCom = $comment->getCommentByIdNb($data['id_article'])->fetch();
-            $nbRepon = $reponse->nbReponses($nbCom['id_comment']);
-            if($nbReponses = $nbRepon->fetch()) {
-                $nbreps = $nbReponses['nb'];
-            }else{
-                $nbreps = 0;
-            }
-            $nbrComt = $nbComments['nb'] + $nbreps ;
-        }else{
-            $nbrComt = 0;
-        }
-
+        $nbComments = $comment->nbComment($data['id_article'])->fetch();
+        $nbCom = $comment->getCommentByIdNb($data['id_article'])->fetch();
+        $nbRepon = $reponse->nbReponses($nbCom['id_comment']);
+      if($nbReponses = $nbRepon->fetch()) {
+          $nbreps = $nbReponses['nb'];
+      }else{
+          $nbreps = 0;
+      }
+        $nbrComt = $nbComments['nb'] + $nbreps ;
     ?>
         <div class="blog-item">
             <div class="image">
@@ -99,9 +108,9 @@ require_once 'layout/header.php';
                         </li>
                     </ul>
                     <div class="content">
-                        <h4><a href="<?=$domaine?>/show/<?=$data['slug']?>"><?=reduit_text(html_entity_decode(stripslashes($data['titre'])),'70');?></a></h4>
+                        <h4><a href="<?=$domaine?>/show/<?=$data['slug']?>"><?=html_entity_decode(stripslashes($data['titre']));?></a></h4>
                       <div class="cont pt-3"> <?=reduit_text(html_entity_decode(stripslashes($data['description'])),'500');?></div>
-                        <div class="read"><a href="<?=$domaine?>/show/<?=$data['slug']?>" class="default-button">Lire la suite</a></div>
+                        <a href="<?=$domaine?>/show/<?=$data['slug']?>" class="default-button">Lire la suite</a>
                     </div>
                 </div>
             </div>

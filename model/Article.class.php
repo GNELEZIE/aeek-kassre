@@ -15,6 +15,31 @@ class Article{
         $rs = $this->bdd->query($query);
         return $rs;
     }
+    public function getHomeAllArticle(){
+        $query = "SELECT * FROM article
+          ORDER BY id_article DESC LIMIT 3";
+        $rs = $this->bdd->query($query);
+        return $rs;
+    }
+
+    public function getCinqArticle(){
+        $query = "SELECT * FROM article
+          ORDER BY id_article DESC LIMIT 10";
+        $rs = $this->bdd->query($query);
+        return $rs;
+    }
+    public function getAllArticleSide(){
+        $query = "SELECT * FROM article
+          ORDER BY id_article DESC ";
+        $rs = $this->bdd->query($query);
+        return $rs;
+    }
+    public function getLastArticleSide(){
+        $query = "SELECT * FROM article
+          ORDER BY id_article DESC LIMIT 1";
+        $rs = $this->bdd->query($query);
+        return $rs;
+    }
 
     public function getArticleById($id){
         $query = "SELECT * FROM article
@@ -25,6 +50,17 @@ class Article{
         ));
         return $rs;
     }
+
+   public function getArticleByCategorie($id){
+        $query = "SELECT * FROM article
+        WHERE id_article = :id";
+        $rs = $this->bdd->prepare($query);
+        $rs->execute(array(
+            "id" => $id
+        ));
+        return $rs;
+    }
+
     public function getArticleBySlug($slug){
         $query = "SELECT * FROM article
         WHERE slug = :slug";
@@ -35,52 +71,64 @@ class Article{
         return $rs;
     }
 
-//Update
-    public function updateArticle($etat,$id){
-        $query = "UPDATE article
-            SET statut = :etat
-            WHERE id_article = :id ";
+    public function getArticleBySlugNbr($slug){
+        $query = "SELECT * FROM article
+        WHERE slug = :slug";
         $rs = $this->bdd->prepare($query);
         $rs->execute(array(
-            "etat" => $etat,
-            "id" => $id
+            "slug" => $slug
         ));
-
-        $nb = $rs->rowCount();
-        return $nb;
-
+        return $rs;
     }
-    public function updateArticleInfo($titre,$categorie_id,$description,$id){
-        $query = "UPDATE article
-            SET titre = :titre,categorie_id = :categorie_id, description =:description
-            WHERE id_article = :id ";
+    public function getArticleBySearch($search){
+
+        $query = "SELECT * FROM article
+        WHERE description LIKE '%$search%' OR titre LIKE '%$search%'";
+        $rs = $this->bdd->query($query);
+        return $rs;
+    }
+
+    public function getArticleBySearchNbr($search){
+
+        $query = "SELECT COUNT(*) as nb FROM article
+        WHERE description LIKE '%$search%' OR titre LIKE '%$search%'";
+        $rs = $this->bdd->query($query);
+        return $rs;
+    }
+
+//Count
+
+    public function getAllNbrArticle(){
+        $query = "SELECT COUNT(*) as nb FROM article";
+        $rs = $this->bdd->query($query);
+        return $rs;
+    }
+    public function getNbrCatByArticle($categorie_id){
+        $query = "SELECT COUNT(*) as nb FROM article
+        WHERE categorie_id = :categorie_id";
         $rs = $this->bdd->prepare($query);
         $rs->execute(array(
-            "titre" => $titre,
-            "categorie_id" => $categorie_id,
-            "description" => $description,
-            "id" => $id
+            "categorie_id" => $categorie_id
         ));
-
-        $nb = $rs->rowCount();
-        return $nb;
-
+        return $rs;
     }
-
-    public function updateCouverturePhoto($couverture,$id){
-        $query = "UPDATE article
-            SET couverture = :couverture
-            WHERE id_article = :id ";
+    public function getAllNbrArticles($debut, $fin){
+        $query = "SELECT * FROM article
+        ORDER BY id_article DESC LIMIT $debut, $fin";
+        $rs = $this->bdd->query($query);
+        return $rs;
+    }
+    public function getAllNbrArticlesCat($debut, $fin, $catId){
+        $query = "SELECT * FROM article
+        WHERE categorie_id = :catId
+        ORDER BY id_article DESC LIMIT $debut, $fin";
         $rs = $this->bdd->prepare($query);
         $rs->execute(array(
-            "couverture" => $couverture,
-            "id" => $id
+            "catId" => $catId
         ));
-
-        $nb = $rs->rowCount();
-        return $nb;
-
+        return $rs;
     }
+
     // Verification valeur existant
     public function verifArticle($propriete,$val){
         $query = "SELECT * FROM article WHERE $propriete = :val";

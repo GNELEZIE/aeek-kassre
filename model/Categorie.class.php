@@ -5,24 +5,7 @@ class Categorie{
   }
 
 
-// Create
 
-    public function addCategorie($dateCat,$nom,$slug){
-        $query = "INSERT INTO categorie(date_categorie,nom,slug)
-            VALUES (:dateCat,:nom,:slug)";
-        $rs = $this->bdd->prepare($query);
-        $rs->execute(array(
-            "dateCat" => $dateCat,
-            "nom" => $nom,
-            "slug" => $slug
-
-        ));
-        $nb = $rs->rowCount();
-        if($nb > 0){
-            $r = $this->bdd->lastInsertId();
-            return $r;
-        }
-    }
 
 
 // Read
@@ -55,37 +38,8 @@ class Categorie{
         return $rs;
     }
 
-    //Update
 
-    public function updateCategorie($nom,$slug,$id){
-        $query = "UPDATE categorie
-                 SET nom = :nom, slug = :slug
-           WHERE id_categorie = :id ";
-        $rs = $this->bdd->prepare($query);
-        $rs->execute(array(
-            "nom" => $nom,
-            "slug" => $slug,
-            "id" => $id
 
-        ));
-        $nb = $rs->rowCount();
-        return $nb;
-    }
-
-    // Delete
-    public function deleteCat($id){
-
-        $query = "DELETE  FROM categorie WHERE id_categorie  = :id";
-        $rs = $this->bdd->prepare($query);
-        $rs->execute(array(
-            "id" => $id
-
-        ));
-
-        $nb = $rs->rowCount();
-        return $nb;
-
-    }
 
 
     // Verification valeur existant

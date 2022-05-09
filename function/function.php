@@ -46,7 +46,7 @@ if(!function_exists('days_fr')){
 
 if(!function_exists('date_lettre')){
     function date_lettre($date){
-        $dts = days_fr(date('N', strtotime($date))).' '. date('d', strtotime($date)).' '. month_fr(date('m', strtotime($date))).' '. date('Y', strtotime($date)).' à '. date('H', strtotime($date)).'h';
+        $dts = days_fr(date('N', strtotime($date))).' '. date('d', strtotime($date)).' '. month_fr(date('m', strtotime($date))).' '. date('Y', strtotime($date));
         return $dts;
     }
 }

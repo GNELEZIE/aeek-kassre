@@ -1,4 +1,5 @@
 <?php
+$listes = $article->getHomeAllArticle();
 require_once 'layout/header.php';
 ?>
 
@@ -71,10 +72,12 @@ require_once 'layout/header.php';
                             Entusiastically streamline fullys tested metrics without freproof web services enabled
                             experiences bricks clicks are aparadigms Rapidiously evisculate standards compliant web
                             services are afor error-free Assertively engineer are Rapidiously evisculate standards
+                            compliant fullys tested metrics without futureproof web services an fullys testedscu
                             compliant fullys tested metrics without futureproof web services an fullys tested
-                            metrics without futureproof web services</p>
+                            metrics without futureproof webfutureproof web services an fullys tested
+                        </p>
                         <ul class="about-button">
-                            <li><a href="#" class="default-button">En savoir plus</a></li>
+                            <li><a href="#" class="default-button btn-green-transparent">En savoir plus</a></li>
                         </ul>
                     </div>
                 </div>
@@ -93,102 +96,45 @@ require_once 'layout/header.php';
                 </div>
 
                 <div class="section-wrapper row">
-                    <div class="col-lg-4">
-                        <div class="blog-item">
-                            <div class="blog-thumb">
-                                <a href="#"><img src="<?=$asset?>/media/aeek-2.jpeg" alt="thumb"></a>
-                            </div>
-                            <div class="blog-content">
-                                <ul class="meta-post style2">
-                                    <li><img src="<?=$asset?>/images/12-09-18/blog/icon/share.png" alt="icon">
-                                        <ul class="social-media-list">
-                                            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-                                            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-                                            <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
-                                            <li><a class="rss" href="#"><i class="fa fa-rss"></i></a></li>
-                                        </ul>
-                                    </li>
-                                    <li><img src="<?=$asset?>/images/12-09-18/blog/icon/comment.png" alt="icon"><span>15</span></li>
-                                    <li><img src="<?=$asset?>/images/12-09-18/blog/icon/heart.png" alt="icon"><span>25</span></li>
-                                </ul>
-                                <div class="content-part">
-                                    <h4><a href="#">awesome post High Ecent Nche With Prin</a></h4>
-                                    <ul class="post-meta">
-                                        <li>By: <a href="#">Smith Sha</a></li>
-                                        <li>Category: <a href="#">Business</a></li>
-                                        <li>Date: <a href="#">14 June, 2021</a></li>
+                    <?php
+                    while($dat = $listes->fetch()){
+                        ?>
+                        <div class="col-lg-4">
+                            <div class="blog-item">
+                                <div class="blog-thumb">
+                                    <a href="<?=$domaine?>/show/<?=$dat['slug']?>"><img src="<?=$domaine?>/uploads/<?=$dat['couverture'];?>" style="object-fit: cover; height: 250px;" alt="thumb"></a>
+                                </div>
+                                <div class="blog-content">
+                                    <ul class="meta-post style2">
+                                        <li><img src="<?=$asset?>/images/12-09-18/blog/icon/share.png" alt="icon">
+                                            <ul class="social-media-list">
+                                                <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                                                <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                                                <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                                                <li><a class="rss" href="#"><i class="fa fa-rss"></i></a></li>
+                                            </ul>
+                                        </li>
+                                        <li><img src="<?=$asset?>/images/12-09-18/blog/icon/comment.png" alt="icon"><span>15</span></li>
+                                        <li><img src="<?=$asset?>/images/12-09-18/blog/icon/heart.png" alt="icon"><span>25</span></li>
                                     </ul>
-                                    <p>Qntegate Supple Chans Through Markey Poston Bestng Practces Chains Through Markey
-                                        Postonn Bestin Practces eractve Fashion Fashion Economically And Sound</p>
-                                    <a href="#" class="default-button">Lire plus</a>
+                                    <div class="content-part">
+                                        <h4><a href="<?=$domaine?>/show/<?=$dat['slug']?>" class="font-20"  style="text-transform: initial !important;"><?=reduit_text(html_entity_decode(stripslashes($dat['titre'])),'20');?></a></h4>
+                                        <div class="cont">
+                                            <?=reduit_text(html_entity_decode(stripslashes($dat['description'])),'250');?>
+                                        </div>
+                                        <a href="<?=$domaine?>/show/<?=$dat['slug']?>" class="btn-transparence-orange" style="padding: 10px 18px !important;">Lire plus</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                        <?php
+                    }
+                    ?>
 
-                    <div class="col-lg-4">
-                        <div class="blog-item">
-                            <div class="blog-thumb">
-                                <a href="#"><img src="<?=$asset?>/media/aeek-2.jpeg" alt="thumb"></a>
-                            </div>
-                            <div class="blog-content">
-                                <ul class="meta-post style2">
-                                    <li><img src="<?=$asset?>/images/12-09-18/blog/icon/share.png" alt="icon">
-                                        <ul class="social-media-list">
-                                            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-                                            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-                                            <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
-                                            <li><a class="rss" href="#"><i class="fa fa-rss"></i></a></li>
-                                        </ul>
-                                    </li>
-                                    <li><img src="<?=$asset?>/images/12-09-18/blog/icon/comment.png" alt="icon"></li>
-                                    <li><img src="<?=$asset?>/images/12-09-18/blog/icon/heart.png" alt="icon"></li>
-                                </ul>
-                                <div class="content-part">
-                                    <h4><a href="#">awesome post High Ecent Nche With Prin</a></h4>
-                                    <ul class="post-meta">
-                                        <li>By: <a href="#">Smith Sha</a></li>
-                                        <li>Category: <a href="#">Business</a></li>
-                                        <li>Date: <a href="#">14 June, 2021</a></li>
-                                    </ul>
-                                    <p>Qntegate Supple Chans Through Markey Poston Bestng Practces Chains Through Markey
-                                        Postonn Bestin Practces etve Fashion Fashion Economically And Sound Qources</p>
-                                    <a href="#" class="default-button">Lire plus</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div><div class="col-lg-4">
-                        <div class="blog-item">
-                            <div class="blog-thumb">
-                                <a href="#"><img src="<?=$asset?>/media/aeek-2.jpeg" alt="thumb"></a>
-                            </div>
-                            <div class="blog-content">
-                                <ul class="meta-post style2">
-                                    <li><img src="<?=$asset?>/images/12-09-18/blog/icon/share.png" alt="icon">
-                                        <ul class="social-media-list">
-                                            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-                                            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-                                            <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
-                                            <li><a class="rss" href="#"><i class="fa fa-rss"></i></a></li>
-                                        </ul>
-                                    </li>
-                                    <li><img src="<?=$asset?>/images/12-09-18/blog/icon/comment.png" alt="icon"></li>
-                                    <li><img src="<?=$asset?>/images/12-09-18/blog/icon/heart.png" alt="icon"></li>
-                                </ul>
-                                <div class="content-part">
-                                    <h4><a href="#">awesome post High Ecent Nche With Prin</a></h4>
-                                    <ul class="post-meta">
-                                        <li>By: <a href="#">Smith Sha</a></li>
-                                        <li>Category: <a href="#">Business</a></li>
-                                        <li>Date: <a href="#">14 June, 2021</a></li>
-                                    </ul>
-                                    <p>Qntegate Supple Chans Through Markey Poston Bestng Practces Chains Through Markey
-                                        Postonn Bestin Practces etve Fashion Fashion Economically And Sound Qources</p>
-                                    <a href="#" class="default-button">Lire plus</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                   <div class="read text-center">
+                       <a href="<?=$domaine?>/blog" class="btn-green-transparent p-3" style="padding: 12px 44px !important; border-radius: 3px;">Lire plus</a>
+                   </div>
+
                 </div>
             </div>
         </div>

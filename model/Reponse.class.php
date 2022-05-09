@@ -7,9 +7,9 @@ class Reponse{
 
 
     //Create
-    public function addReponse($date_reponse,$nom,$email,$message, $comment_id){
-        $query = "INSERT INTO reponse(date_reponse,nom,email,message,comment_id)
-            VALUES (:date_reponse,:nom,:email,:message, :comment_id)";
+    public function addReponse($date_reponse,$nom,$email,$message, $comment_id,$articles_id){
+        $query = "INSERT INTO reponse(date_reponse,nom,email,message,comment_id,article_id)
+            VALUES (:date_reponse,:nom,:email,:message, :comment_id,:articles_id)";
         $rs = $this->bdd->prepare($query);
         $rs->execute(array(
             "date_reponse" => $date_reponse,
@@ -17,6 +17,7 @@ class Reponse{
             "email" => $email,
             "message" => $message,
             "comment_id" => $comment_id,
+            "articles_id" => $articles_id
         ));
         $nb = $rs->rowCount();
         if($nb > 0){
@@ -54,13 +55,13 @@ class Reponse{
     }
 
 //Count
-    public function nbReponses($com_id,$art_id){
+    public function nbReponses($com_id){
         $query = "SELECT COUNT(*) as nb FROM reponse
-        WHERE comment_id = :com_id AND article_id = :art_id";
+        WHERE comment_id = :com_id ";
         $rs = $this->bdd->prepare($query);
         $rs->execute(array(
-            "com_id" => $com_id,
-            "art_id" => $art_id
+            "com_id" => $com_id
+
         ));
         return $rs;
     }

@@ -16,8 +16,8 @@ if(isset($_GET['page']) and is_numeric($_GET['page'])){
     $debut = 0;
     $fin = 4;
 }
-
-$res = $article->getAllNbrArticle();
+$search = htmlentities(trim(addslashes(strip_tags($_GET['search']))));
+$res = $article->getArticleBySearchNbr($search);
 
 if($nbre = $res->fetch()){
     $pages = $nbre['nb']/4;
@@ -25,7 +25,7 @@ if($nbre = $res->fetch()){
     $pages = 1;
 }
 $myPage = '/blog';
-$liste = $article->getAllNbrArticles($debut,$fin);
+$liste = $article->getArticleBySearch($search);
 
 
 require_once 'layout/header.php';
@@ -39,7 +39,7 @@ require_once 'layout/header.php';
 <section class="page-header">
     <div class="container">
         <div class="content">
-            <h4>Pongala info</h4>
+            <h4>Resultat pour : <span class="font-weight-normal"><?=$_GET['search']?></span></h4>
             <ul>
                 <li><span><i class="fa fa-home" aria-hidden="true"></i></span> <a href="<?=$domaine?>">Acceuil</a>
                     <span>|</span></li>
@@ -56,22 +56,15 @@ require_once 'layout/header.php';
     <?php
     while($data = $liste->fetch()){
     $authors = $admin->getAdminById($data['user_id'])->fetch();
-        $commentExiste = $comment->getCommentById($data['id_article']);
-
-        if($nbCom = $commentExiste->fetch()){
-            $nbComments = $comment->nbComment($data['id_article'])->fetch();
-            $nbCom = $comment->getCommentByIdNb($data['id_article'])->fetch();
-            $nbRepon = $reponse->nbReponses($nbCom['id_comment']);
-            if($nbReponses = $nbRepon->fetch()) {
-                $nbreps = $nbReponses['nb'];
-            }else{
-                $nbreps = 0;
-            }
-            $nbrComt = $nbComments['nb'] + $nbreps ;
-        }else{
-            $nbrComt = 0;
-        }
-
+        $nbComments = $comment->nbComment($data['id_article'])->fetch();
+        $nbCom = $comment->getCommentByIdNb($data['id_article'])->fetch();
+        $nbRepon = $reponse->nbReponses($nbCom['id_comment']);
+      if($nbReponses = $nbRepon->fetch()) {
+          $nbreps = $nbReponses['nb'];
+      }else{
+          $nbreps = 0;
+      }
+        $nbrComt = $nbComments['nb'] + $nbreps ;
     ?>
         <div class="blog-item">
             <div class="image">
@@ -99,14 +92,15 @@ require_once 'layout/header.php';
                         </li>
                     </ul>
                     <div class="content">
-                        <h4><a href="<?=$domaine?>/show/<?=$data['slug']?>"><?=reduit_text(html_entity_decode(stripslashes($data['titre'])),'70');?></a></h4>
+                        <h4><a href="<?=$domaine?>/show/<?=$data['slug']?>"><?=html_entity_decode(stripslashes($data['titre']));?></a></h4>
                       <div class="cont pt-3"> <?=reduit_text(html_entity_decode(stripslashes($data['description'])),'500');?></div>
-                        <div class="read"><a href="<?=$domaine?>/show/<?=$data['slug']?>" class="default-button">Lire la suite</a></div>
+                        <a href="<?=$domaine?>/show/<?=$data['slug']?>" class="default-button">Lire la suite</a>
                     </div>
                 </div>
             </div>
         </div>
     <?php
+
     }
     ?>
 

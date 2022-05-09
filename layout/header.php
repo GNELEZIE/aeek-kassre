@@ -33,6 +33,48 @@
     <link href="<?=$asset?>/plugins/sweetalert/sweet-alert.css" rel="stylesheet" />
 
     <style>
+        .btn-transparence-orange {
+            background: #ff46003b !important;
+            color: #ff4600 !important;
+        }
+        .btn-green-transparent{
+            background: #00a6504a !important;
+            color: #0ba053 !important;
+            border: none !important;
+        }
+        .btn-green-transparent:hover{
+            background: #00a65085 !important;
+            color: #FFFFFF !important;
+            border: none !important;
+        }
+        .btn-red-transparent{
+            background: #f900243d !important;
+            color: #f90024 !important;
+            border: none !important;
+        }
+        .btn-red-transparent:hover{
+            background: #f90024 !important;
+            color: #FFFFFF !important;
+            border: none !important;
+        }
+        .sidebar form input{
+            border-radius: 6px !important;
+            border: 2px solid #040404 !important;
+        }
+        .pagination li a.active{
+            color: #fff !important;
+            border: 1px solid #ff5c00 !important;
+            background: #ff5c00 !important;
+        }
+        .default-button {
+            text-transform: initial !important;
+        }
+        .blog-page .content>a {
+            padding: 7px 35px !important;
+        }
+        .comment-form .comment-submit {
+            padding: 11px 22px !important;
+        }
         .input-style{
             border: 2px solid #ced4da !important;
             border-radius: 6px !important;
@@ -143,7 +185,7 @@
     <div class="menu-fixed p-0">
         <nav class="navbar navbar-expand-lg bg-white">
             <div class="container">
-                <a class="navbar-brand" href="index.html"><img src="<?=$asset?>/media/logoAEEK.png" width="50" alt="logo"
+                <a class="navbar-brand" href="<?=$domaine?>"><img src="<?=$asset?>/media/logoAEEK.png" width="50" alt="logo"
                                                                class="img-responsive"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -154,7 +196,7 @@
                     <div class="main-menu" style="">
                         <div class="menu-left">
                             <ul>
-                                <li><a href="">Accueil</a></li>
+                                <li><a href="<?=$domaine?>">Accueil</a></li>
                                 <li><a href="">Bureau</a></li>
 
                                 <li><a href="">A propos</a></li>
