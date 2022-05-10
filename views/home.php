@@ -75,9 +75,16 @@ require_once 'layout/header.php';
                             compliant fullys tested metrics without futureproof web services an fullys testedscu
                             compliant fullys tested metrics without futureproof web services an fullys tested
                             metrics without futureproof webfutureproof web services an fullys tested
+                            metrics without futureproof webfutureproof web services an fullys tested
+                            metrics without futureproof webfutureproof web services an fullys tested
+                            metrics without futureproof webfutureproof web services an fullys tested
+                            metrics without futureproof webfutureproof web services an fullys tested
+                           webfutureproof web services an fullys tested
+                            metrics without futureproof webfutureproof web services an fullys tested
+                            metrics without futureproof webfutureproof web services an fullys tested
                         </p>
                         <ul class="about-button">
-                            <li><a href="#" class="default-button btn-green-transparent">En savoir plus</a></li>
+                            <li><a href="#" class="default-button btn-green-transparent">En savoir plus <i class="fa fa-arrow-right" aria-hidden="true"></i> </a></li>
                         </ul>
                     </div>
                 </div>
@@ -97,7 +104,22 @@ require_once 'layout/header.php';
 
                 <div class="section-wrapper row">
                     <?php
+
                     while($dat = $listes->fetch()){
+                        $commentExiste = $comment->getCommentById($dat['id_article']);
+                        if($nbCom = $commentExiste->fetch()){
+                            $nbComments = $comment->nbComment($dat['id_article'])->fetch();
+                            $nbCom = $comment->getCommentByIdNb($dat['id_article'])->fetch();
+                            $nbRepon = $reponse->nbReponses($nbCom['id_comment']);
+                            if($nbReponses = $nbRepon->fetch()) {
+                                $nbreps = $nbReponses['nb'];
+                            }else{
+                                $nbreps = 0;
+                            }
+                            $nbrComt = $nbComments['nb'] + $nbreps ;
+                        }else{
+                            $nbrComt = 0;
+                        }
                         ?>
                         <div class="col-lg-4">
                             <div class="blog-item">
@@ -114,7 +136,7 @@ require_once 'layout/header.php';
                                                 <li><a class="rss" href="#"><i class="fa fa-rss"></i></a></li>
                                             </ul>
                                         </li>
-                                        <li><img src="<?=$asset?>/images/12-09-18/blog/icon/comment.png" alt="icon"><span>15</span></li>
+                                        <li><img src="<?=$asset?>/images/12-09-18/blog/icon/comment.png" alt="icon"><span><?=$nbrComt?></span></li>
                                         <li><img src="<?=$asset?>/images/12-09-18/blog/icon/heart.png" alt="icon"><span>25</span></li>
                                     </ul>
                                     <div class="content-part">
@@ -122,7 +144,7 @@ require_once 'layout/header.php';
                                         <div class="cont">
                                             <?=reduit_text(html_entity_decode(stripslashes($dat['description'])),'250');?>
                                         </div>
-                                        <a href="<?=$domaine?>/show/<?=$dat['slug']?>" class="btn-transparence-orange" style="padding: 10px 18px !important;">Lire plus</a>
+                                        <a href="<?=$domaine?>/show/<?=$dat['slug']?>" class="btn-transparence-orange" style="padding: 10px 18px !important;">Lire plus <i class="fa fa-arrow-right" aria-hidden="true"></i> </a>
                                     </div>
                                 </div>
                             </div>
@@ -132,7 +154,7 @@ require_once 'layout/header.php';
                     ?>
 
                    <div class="read text-center">
-                       <a href="<?=$domaine?>/blog" class="btn-green-transparent p-3" style="padding: 12px 44px !important; border-radius: 3px;">Lire plus</a>
+                       <a href="<?=$domaine?>/blog" class="btn-green-transparent p-3" style="padding: 12px 44px !important; border-radius: 3px;">Lire plus <i class="fa fa-arrow-right" aria-hidden="true"></i> </a>
                    </div>
 
                 </div>

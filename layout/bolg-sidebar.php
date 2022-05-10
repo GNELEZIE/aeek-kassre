@@ -7,7 +7,12 @@
              <?php
              $sideArticle = $article->getAllArticleSide();
              $categ = $categorie->getAllCategorie();
-             $lastArticle = $article->getLastArticleSide()->fetch();
+             $lastArticl = $article->getLastArticleSide();
+             if($lastArticle = $lastArticl->fetch()){
+                 $lastArticles = reduit_text(html_entity_decode(stripslashes($lastArticle['description'])),'500','...');
+             }else{
+                 $lastArticles ='';
+             }
              while($results = $sideArticle->fetch()){
                  $inf = reduit_text(html_entity_decode(stripslashes($results['description'])),'500','...');
                  ?>
@@ -27,7 +32,7 @@
             <div id="nt-example2-infos-triangle"></div>
             <div id="nt-example2-infos" class="row">
                 <div class="col-xs-8">
-                    <div class="infos-text"><?=reduit_text(html_entity_decode(stripslashes($lastArticle['description'])),'500','...');?></div>
+                    <div class="infos-text"><?=$lastArticles;?></div>
                 </div>
             </div>
         </div>

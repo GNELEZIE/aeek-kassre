@@ -57,7 +57,6 @@ require_once 'layout/header.php';
     while($data = $liste->fetch()){
     $authors = $admin->getAdminById($data['user_id'])->fetch();
         $commentExiste = $comment->getCommentById($data['id_article']);
-
         if($nbCom = $commentExiste->fetch()){
             $nbComments = $comment->nbComment($data['id_article'])->fetch();
             $nbCom = $comment->getCommentByIdNb($data['id_article'])->fetch();
@@ -101,7 +100,7 @@ require_once 'layout/header.php';
                     <div class="content">
                         <h4><a href="<?=$domaine?>/show/<?=$data['slug']?>"><?=reduit_text(html_entity_decode(stripslashes($data['titre'])),'70');?></a></h4>
                       <div class="cont pt-3"> <?=reduit_text(html_entity_decode(stripslashes($data['description'])),'500');?></div>
-                        <div class="read"><a href="<?=$domaine?>/show/<?=$data['slug']?>" class="default-button">Lire la suite</a></div>
+                        <div class="read"><a href="<?=$domaine?>/show/<?=$data['slug']?>" class="btn-transparence-orange" style="border-radius: 3px; padding: 10px 20px;">Lire la suite <i class="fa fa-arrow-right" aria-hidden="true"></i> </a></div>
                     </div>
                 </div>
             </div>

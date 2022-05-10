@@ -4,26 +4,29 @@ if(isset($doc[1]) and !isset($doc[2])) {
     $liste = $article->getArticleBySlug($doc[1]);
     $listeNbr = $article->getArticleBySlugNbr($doc[1])->fetch();
 
-    if ($data = $liste->fetch()) {
+    if ($data = $liste->fetch()){
         $authors = $admin->getAdminById($data['user_id'])->fetch();
-    } else {
+        $comments = $comment->getCommentById($data['id_article']);
+        $commentsNb = $comment->getCommentByIdNb($data['id_article'])->fetch();
+        if($nbCom = $comments->fetch()){
+            $nbComments = $comment->nbComment($data['id_article'])->fetch();
+            $nbReponses = $reponse->nbReponses($commentsNb['id_comment'])->fetch();
+            $nbrComt = $nbComments['nb'] + $nbReponses['nb'];
+        }else{
+            $nbrComt = 0;
+        }
+    }else {
         header('location:' . $domaine . '/error');
         exit();
     }
 }
-$comments = $comment->getCommentById($data['id_article']);
-$commentsNb = $comment->getCommentByIdNb($data['id_article'])->fetch();
+
+
 //$comments = $comment->getAllComment();
 
 //$comt = $comments->fetch();
 
-if($nbCom = $comments->fetch()){
-    $nbComments = $comment->nbComment($data['id_article'])->fetch();
-    $nbReponses = $reponse->nbReponses($commentsNb['id_comment'])->fetch();
-    $nbrComt = $nbComments['nb'] + $nbReponses['nb'];
-}else{
-    $nbrComt = 0;
-}
+
 
 //require_once 'controller/save.comment.php';
 //require_once 'controller/save.reponse.php';
@@ -74,13 +77,13 @@ require_once 'layout/header.php';
                     <!-- blog-content -->
                     <div class="post-bottom">
                         <ul class="tags">
-                            <li><span>Tags :</span></li>
+                            <li><span style="text-transform: inherit !important;">Tags :</span></li>
                             <li><a href="#">Business,</a></li>
                             <li><a href="#">Event,</a></li>
                             <li><a href="#">Marketing</a></li>
                         </ul>
                         <ul class="share event-social">
-                            <li><span>Partager sur :</span></li>
+                            <li><span style="text-transform: inherit !important;">Partager sur :</span></li>
                             <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                             <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                             <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
