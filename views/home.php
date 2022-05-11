@@ -121,7 +121,7 @@ require_once 'layout/header.php';
                             $nbrComt = 0;
                         }
                         ?>
-                        <div class="col-lg-4">
+                        <div class="col-md-4">
                             <div class="blog-item">
                                 <div class="blog-thumb">
                                     <a href="<?=$domaine?>/show/<?=$dat['slug']?>"><img src="<?=$domaine?>/uploads/<?=$dat['couverture'];?>" style="object-fit: cover; height: 250px;" alt="thumb"></a>
