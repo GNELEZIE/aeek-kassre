@@ -1,5 +1,6 @@
 <?php
 $listes = $article->getHomeAllArticle();
+$vus = $compter->compter_visite();
 require_once 'layout/header.php';
 ?>
 

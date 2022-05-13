@@ -1,66 +1,80 @@
-<div class="row">
-    <div class="section-header style2">
-        <h3>Notre actualité</h3>
-        <p>Synergistically Visualize Competitive Action Ttems For Open Source Opportunities Professionaly
-            Develop Vertical Oportunities Rather Than
-        </p>
+<li class="comment-item">
+    <div class="image"><img src="<?=$asset?>/media/anonym.png" alt="Blog image" class="img-responsive"></div>
+    <div class="com-content">
+        <h4><?=html_entity_decode(stripslashes($nom))?></h4>
+        <span><i class="fa fa-circle" aria-hidden="true"></i> <?=date_lettre($com['date_comment']);?> </span>
+        <p><?=html_entity_decode(stripslashes($com['message']))?></p>
+        <a href="javascript:void(0)" class="" data-bs-toggle="collapse" data-bs-target="#flush-collapse<?=$com['id_comment']?>" aria-expanded="false" aria-controls="flush-collapse<?=$com['id_comment']?>"><i class="fa fa-reply" aria-hidden="true"></i> Répondre</a>
     </div>
-
-    <div class="section-wrapper">
-        <div class="row">
-            <?php
-
-            while($dat = $listes->fetch()){
-                $commentExiste = $comment->getCommentById($dat['id_article']);
-                if($nbCom = $commentExiste->fetch()){
-                    $nbComments = $comment->nbComment($dat['id_article'])->fetch();
-                    $nbCom = $comment->getCommentByIdNb($dat['id_article'])->fetch();
-                    $nbRepon = $reponse->nbReponses($nbCom['id_comment']);
-                    if($nbReponses = $nbRepon->fetch()) {
-                        $nbreps = $nbReponses['nb'];
-                    }else{
-                        $nbreps = 0;
-                    }
-                    $nbrComt = $nbComments['nb'] + $nbreps ;
-                }else{
-                    $nbrComt = 0;
-                }
-                ?>
-                <div class="col-md-4">
-                    <div class="blog-item">
-                        <div class="blog-thumb">
-                            <a href="<?=$domaine?>/show/<?=$dat['slug']?>"><img src="<?=$domaine?>/uploads/<?=$dat['couverture'];?>" style="object-fit: cover; height: 250px;" alt="thumb"></a>
+    <div class="accordion accordion-flush" id="reponse<?=$com['id_comment']?>">
+        <div class="accordion-item">
+            <div id="flush-collapse<?=$com['id_comment']?>" class="accordion-collapse collapse" aria-labelledby="flush-heading<?=$com['id_comment']?>" data-bs-parent="#reponse<?=$com['id_comment']?>">
+                <div class="comment-form">
+                    <form method="post" id="formRepondre">
+                        <div class="succesR"></div>
+                        <div class="errosR"></div>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-xs-12">
+                                <input type="text" name="nomR" id="nomR" placeholder="Nom*" class="comment-input input-style" required>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-xs-12">
+                                <input type="email" name="emailR" id="emailR" placeholder="Email*" class="comment-input input-style" required>
+                                <input type="hidden" class="form-control " name="formkey" value="<?= $token ?>">
+                                <input type="hidden" class="form-control " name="article_id" value="<?= $data['id_article'] ?>">
+                                <input type="hidden" class="form-control " name="com_id" id="com_id" value="<?=$com['id_comment']?>">
+                            </div>
                         </div>
-                        <div class="blog-content">
-                            <ul class="meta-post style2">
-                                <li><img src="<?=$asset?>/images/12-09-18/blog/icon/share.png" alt="icon">
-                                    <ul class="social-media-list">
-                                        <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
-                                        <li><a class="rss" href="#"><i class="fa fa-rss"></i></a></li>
-                                    </ul>
-                                </li>
-                                <li><img src="<?=$asset?>/images/12-09-18/blog/icon/comment.png" alt="icon"><span><?=$nbrComt?></span></li>
-                                <li><img src="<?=$asset?>/images/12-09-18/blog/icon/heart.png" alt="icon"><span>25</span></li>
-                            </ul>
-                            <div class="content-part">
-                                <h4><a href="<?=$domaine?>/show/<?=$dat['slug']?>" class="font-20"  style="text-transform: initial !important;"><?=reduit_text(html_entity_decode(stripslashes($dat['titre'])),'20');?></a></h4>
-                                <div class="cont">
-                                    <?=reduit_text(html_entity_decode(stripslashes($dat['description'])),'250');?>
-                                </div>
-                                <a href="<?=$domaine?>/show/<?=$dat['slug']?>" class="btn-transparence-orange" style="padding: 10px 18px !important;">Lire plus <i class="fa fa-arrow-right" aria-hidden="true"></i> </a>
+                        <textarea rows="3" name="messageR" id="messageR" class="comment-input input-style" placeholder="Message"></textarea>
+                        <button type="submit" name="submit" class="comment-submit btn-transparence-orange mb-3" style="text-transform: inherit !important;font-weight: inherit !important;">Répondre</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ul>
+        <?php
+        while($respon = $rps->fetch()) {
+            if($respon['nom'] == ''){
+                $nomR ='Anonyme';
+            }else{
+                $nomR =$respon['nom'];
+            }
+            ?>
+            <li class="comment-item">
+                <div class="image"><img src="<?=$asset?>/media/anonym.png" alt="Blog image" class="img-responsive"></div>
+                <div class="com-content">
+                    <h4><?=html_entity_decode(stripslashes($nomR))?></h4>
+                    <span><i class="fa fa-circle" aria-hidden="true"></i><?=date_lettre($respon['date_reponse']);?></span>
+                    <p><?=html_entity_decode(stripslashes($respon['message']))?></p>
+                    <a href="javascript:void(0)" class="" data-bs-toggle="collapse" data-bs-target="#flush-collapse<?=$com['id_comment'].'_'.$respon['id_reponse']?>" aria-expanded="false" aria-controls="flush-collapse<?=$com['id_comment'].'_'.$respon['id_reponse']?>"><i class="fa fa-reply" aria-hidden="true"></i> Répondre</a>
+                </div>
+                <div class="accordion accordion-flush" id="reponse<?=$com['id_comment'].'_'.$respon['id_reponse']?>">
+                    <div class="accordion-item">
+                        <div id="flush-collapse<?=$com['id_comment'].'_'.$respon['id_reponse']?>" class="accordion-collapse collapse" aria-labelledby="flush-heading<?=$com['id_comment'].'_'.$respon['id_reponse']?>" data-bs-parent="#reponse<?=$com['id_comment'].'_'.$respon['id_reponse']?>">
+                            <div class="comment-form">
+                                <form method="post" id="formRepondreR">
+                                    <div class="row">
+                                        <div class="col-lg-4 col-md-4 col-xs-12">
+                                            <input type="text" name="nomR" id="nomR" placeholder="Nom*" class="comment-input input-style" required>
+                                            <input type="hidden" class="form-control " name="article_id" value="<?= $data['id_article'] ?>">
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-xs-12">
+                                            <input type="email" name="emailR" id="emailR" placeholder="Email*" class="comment-input input-style" required>
+                                            <input type="hidden" class="form-control " name="formkey" value="<?= $token ?>">
+                                            <input type="hidden" class="form-control " name="com_id" id="com_id" value="<?=$com['id_comment']?>">
+                                            <input type="hidden" class="form-control " name="article_id" id="article_id" value="<?=$data['id_article']?>">
+                                        </div>
+                                    </div>
+                                    <textarea rows="3" name="messageR" id="messageR" class="comment-input input-style" placeholder="Message"></textarea>
+                                    <button type="submit" name="submit" class="comment-submit btn-transparence-orange mb-3" style="text-transform: inherit !important;font-weight: inherit !important;">Répondre</button>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
-            <?php
-            }
-            ?>
-        </div>
-        <div class="read text-center">
-            <a href="<?=$domaine?>/blog" class="btn-green-transparent p-3" style="padding: 12px 44px !important; border-radius: 3px;">Lire plus <i class="fa fa-arrow-right" aria-hidden="true"></i> </a>
-        </div>
-
-    </div>
-</div>
+            </li>
+        <?php
+        }
+        ?>
+    </ul>
+</li>

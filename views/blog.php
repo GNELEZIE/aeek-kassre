@@ -5,7 +5,7 @@ if(isset($doc[1])){
     $return = $doc[0];
 }
 
-
+$vus = $compter->compter_visite();
 
 if(isset($_GET['page']) and is_numeric($_GET['page'])){
     $numPage = $_GET['page'];

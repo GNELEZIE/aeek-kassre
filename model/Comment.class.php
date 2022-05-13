@@ -28,14 +28,23 @@ class Comment{
     //Read
     public function getAllComment(){
         $query = "SELECT * FROM comment
-          WHERE statut =!1  ORDER BY id_comment DESC ";
+          WHERE statut =!0  ORDER BY id_comment DESC ";
         $rs = $this->bdd->query($query);
         return $rs;
     }
 
     public function getCommentById($id){
         $query = "SELECT * FROM comment
-        WHERE article_id = :id";
+        WHERE  statut =!0  AND article_id = :id ORDER BY id_comment DESC";
+        $rs = $this->bdd->prepare($query);
+        $rs->execute(array(
+            "id" => $id
+        ));
+        return $rs;
+    }
+    public function getCommentBSyId($id){
+        $query = "SELECT * FROM comment
+        WHERE  statut =!0  AND  article_id = :id ORDER BY id_comment DESC";
         $rs = $this->bdd->prepare($query);
         $rs->execute(array(
             "id" => $id
@@ -44,7 +53,7 @@ class Comment{
     }
     public function getCommentByIdNb($id){
         $query = "SELECT * FROM comment
-        WHERE article_id = :id";
+        WHERE article_id = :id AND statut =!0 ";
         $rs = $this->bdd->prepare($query);
         $rs->execute(array(
             "id" => $id
@@ -55,14 +64,15 @@ class Comment{
 //Count
     public function nbComments(){
 
-        $query = "SELECT COUNT(*) as nb FROM comment";
+        $query = "SELECT COUNT(*) as nb FROM comment
+                  WHERE  statut =!0 ";
         $rs = $this->bdd->query($query);
 
         return $rs;
     }
     public function nbComment($id){
         $query = "SELECT  COUNT(*) as nb FROM comment
-        WHERE article_id = :id";
+        WHERE article_id = :id AND   statut =!0 ";
         $rs = $this->bdd->prepare($query);
         $rs->execute(array(
             "id" => $id
