@@ -21,7 +21,7 @@ if(isset($doc[1]) and !isset($doc[2])) {
         exit();
     }
 }
-
+$vus = $compter->compter_visite();
 
 //$comments = $comment->getAllComment();
 

@@ -1,4 +1,5 @@
 <?php
+
 $listes = $article->getHomeAllArticle();
 $vus = $compter->compter_visite();
 require_once 'layout/header.php';
@@ -139,7 +140,7 @@ require_once 'layout/header.php';
                                 <div class="content-part">
                                     <h4><a href="<?=$domaine?>/show/<?=$dat['slug']?>" class="font-17"  style="text-transform: initial !important;"><?=reduit_text(html_entity_decode(stripslashes($dat['titre'])),'27');?></a></h4>
                                         <div class="param">
-                                            <?=reduit_text(html_entity_decode(stripslashes($dat['description'])),'450','...');?>
+                                            <?=reduit_text(html_entity_decode(stripslashes($dat['description'])),'250','...');?>
                                         </div>
                                     <div class="link pt-3">
                                         <a href="<?=$domaine?>/show/<?=$dat['slug']?>" class="btn-transparence-orange" style="padding: 10px 18px !important;">Lire plus <i class="fa fa-arrow-right" aria-hidden="true"></i> </a>

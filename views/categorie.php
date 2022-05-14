@@ -32,7 +32,7 @@ if(isset($doc[1]) and !isset($doc[2])) {
     $categ = "Actualité";
 }
 
-
+$vus = $compter->compter_visite();
 
 
 if($nbre = $res->fetch()){
