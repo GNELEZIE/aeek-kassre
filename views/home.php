@@ -6,34 +6,68 @@ require_once 'layout/header.php';
 ?>
 
     <section class="banner banner-two">
-        <ul class="cb-slideshow">
-            <li>
-                <span>
-                    <img src="<?=$asset?>/media/sl1.jpg" alt="thumb" style="width: 100%;height: 100%;">
-                </span>
-                <div></div>
-            </li>
-            <li>
-                <span>
-                  <img src="<?=$asset?>/media/sl.jpg" alt="thumb" style="width: 100%;height: 100%;">
-                </span>
-                <div></div>
-            </li>
-            <li>
-                <span>
-                  <img src="<?=$asset?>/media/sl2.jpg" alt="thumb" style="width: 100%;height: 100%;">
-                </span>
-                <div></div>
-            </li>
-        </ul>
-        <div class="banner-overlay">
-            <div class="banner-content p-3"><h2><span class="bg-orange p-2 mb-3">Sortie détente 2022 deuxième édition</span></h2>
-                <ul class="mt-4">
-                    <li><span class="flaticon-tool"></span>Le 19 Juin 2022</li>
-                    <li><span class="flaticon-signs"></span>Plage de Jacqueville</li>
-                </ul>
+
+        <div id="carouselExampleCaptions" class="carousel slide h-600" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
+            <div class="carousel-inner h-600">
+                <div class="carousel-item h-600 active">
+                    <img src="<?=$asset?>/media/sl1.jpg" class="d-block w-100 animate__animated animate__lightSpeedInRight" alt="...">
+                    <div class="banner-overlay"></div>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h1 class="font-70 animate__animated animate__zoomIn">Bienvenue</h1>
+                        <p class="text-white font-30 pt-3 animate__animated animate__slideInUp">Sur la plateforme des Elèves et Etudiants de Kasséré</p>
+                    </div>
+                </div>
+                <div class="carousel-item h-600">
+                    <img src="<?=$asset?>/media/sl1.jpg" class="d-block w-100  animate__animated animate__lightSpeedInRight" alt="...">
+                    <div class="banner-overlay"></div>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h1 class="font-57">Second slide label</h1>
+                        <p>Some representative placeholder content for the second slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item h-600">
+                    <img src="<?=$asset?>/media/sl1.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h1 class="font-57">Third slide label</h1>
+                        <p>Some representative placeholder content for the third slide.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
+<!--        <ul class="cb-slideshow">-->
+<!--            <li>-->
+<!--                <span>-->
+<!--                    <img src="--><?//=$asset?><!--/media/sl1.jpg" alt="thumb" style="width: 100%;height: 100%;">-->
+<!--                </span>-->
+<!--                <div></div>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                <span>-->
+<!--                  <img src="--><?//=$asset?><!--/media/sl.jpg" alt="thumb" style="width: 100%;height: 100%;">-->
+<!--                </span>-->
+<!--                <div></div>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                <span>-->
+<!--                  <img src="--><?//=$asset?><!--/media/sl2.jpg" alt="thumb" style="width: 100%;height: 100%;">-->
+<!--                </span>-->
+<!--                <div></div>-->
+<!--            </li>-->
+<!--        </ul>-->
+
     </section>
 
 

@@ -31,8 +31,15 @@
     <link href="<?=$asset?>/css/btn.css" rel="stylesheet">
     <link href="<?=$asset?>/plugins/ticker/css/main.css" rel="stylesheet">
     <link href="<?=$asset?>/plugins/sweetalert/sweet-alert.css" rel="stylesheet" />
+    <link href="<?=$asset?>/plugins/animate/animate.min.css" rel="stylesheet" />
 
     <style>
+        .carousel-caption{
+            bottom: 13rem !important;
+        }
+        .h-600{
+            height: 600px !important;
+        }
         .btn-transparence-orange {
             background: #ff46003b !important;
             color: #ff4600 !important;
