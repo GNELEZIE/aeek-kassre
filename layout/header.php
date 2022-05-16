@@ -175,6 +175,24 @@
                 margin-bottom: 0 !important;
             }
 
+            .h-600{
+                height: 253px !important;
+            }
+            #carouselExampleCaptions{
+                margin-top: 73px !important;
+            }
+            .carousel-caption {
+                top: 20px;
+                bottom: 0 !important;
+            }
+            .font-30{
+                font-size: 16px !important;
+            }
+            .font-70{
+                font-size: 30px !important;
+            }
+
+
 
 
         }

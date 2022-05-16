@@ -5,7 +5,7 @@ $vus = $compter->compter_visite();
 require_once 'layout/header.php';
 ?>
 
-    <section class="banner banner-two">
+    <section class=" banner-two">
 
         <div id="carouselExampleCaptions" class="carousel slide h-600" data-bs-ride="carousel">
             <div class="carousel-indicators">
@@ -16,15 +16,14 @@ require_once 'layout/header.php';
             <div class="carousel-inner h-600">
                 <div class="carousel-item h-600 active">
                     <img src="<?=$asset?>/media/sl1.jpg" class="d-block w-100 animate__animated animate__lightSpeedInRight" alt="...">
-                    <div class="banner-overlay"></div>
-                    <div class="carousel-caption d-none d-md-block">
-                        <h1 class="font-70 animate__animated animate__zoomIn">Bienvenue</h1>
+                    <div class="carousel-caption d-md-block">
+                        <h1 class="font-70 animate__animated animate__zoomIn mb-3"> <span style="background: orange; padding: 10px 20px;">Bienvenue</span> </h1>
                         <p class="text-white font-30 pt-3 animate__animated animate__slideInUp">Sur la plateforme des Elèves et Etudiants de Kasséré</p>
                     </div>
                 </div>
                 <div class="carousel-item h-600">
                     <img src="<?=$asset?>/media/sl1.jpg" class="d-block w-100  animate__animated animate__lightSpeedInRight" alt="...">
-                    <div class="banner-overlay"></div>
+
                     <div class="carousel-caption d-none d-md-block">
                         <h1 class="font-57">Second slide label</h1>
                         <p>Some representative placeholder content for the second slide.</p>
@@ -32,7 +31,7 @@ require_once 'layout/header.php';
                 </div>
                 <div class="carousel-item h-600">
                     <img src="<?=$asset?>/media/sl1.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
+                    <div class="carousel-caption  d-md-block">
                         <h1 class="font-57">Third slide label</h1>
                         <p>Some representative placeholder content for the third slide.</p>
                     </div>
@@ -66,7 +65,10 @@ require_once 'layout/header.php';
 <!--                </span>-->
 <!--                <div></div>-->
 <!--            </li>-->
-<!--        </ul>-->
+<!--        </ul
+                    <div class="banner-overlay"></div>
+
+>-->
 
     </section>
 
