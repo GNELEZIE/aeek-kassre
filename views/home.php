@@ -192,12 +192,12 @@ require_once 'layout/header.php';
                                 <div class="gallery-thumb">
                                     <img src="<?=$asset?>/images/12-09-18/photo-gallery/image1.jpg" alt="image">
                                     <div class="gallery-thumb-ovarlay"></div>
-                                    <a href="" class="gallery-icon">
+                                    <a href="#" class="gallery-icon">
                                         <i class="fa fa-camera" aria-hidden="true"></i>
                                     </a>
                                 </div>
                                 <div class="gallery-title">
-                                    <h4>Theater Conference 2014</h4>
+                                    <h4><a href="#">Theater Conference 2014</a>   </h4>
                                 </div>
                             </div>
                         </div>
