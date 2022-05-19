@@ -34,6 +34,15 @@
     <link href="<?=$asset?>/plugins/animate/animate.min.css" rel="stylesheet" />
 
     <style>
+        .text-justify{
+            text-align: justify !important;
+        }
+
+        .head-pag{
+            margin-top: 74px;
+            background: #ff7729;
+            height: 100px;
+        }
         .carousel-caption{
             bottom: 13rem !important;
         }
@@ -50,7 +59,7 @@
             border: none !important;
         }
         .btn-green-transparent:hover{
-            background: #00a65085 !important;
+            background: #00a650 !important;
             color: #FFFFFF !important;
             border: none !important;
         }
@@ -154,8 +163,17 @@
             padding: 5px 20px !important;
             text-transform: inherit !important;
         }
+        /*.padd-home{*/
+            /*padding: 18px !important;*/
+        /*}*/
 
         @media(max-width: 767px) {
+            .padd-home{
+                padding: 18px 18px 50px 18px !important;
+            }
+.top-home{
+    padding-top: 18px !important;
+}
             nav.navbar{
                 background:#f8f9fa!important;
             }
@@ -224,7 +242,7 @@
                                 <li><a href="<?=$domaine?>">Accueil</a></li>
                                 <li><a href="">Bureau</a></li>
 
-                                <li><a href="">A propos</a></li>
+                                <li><a href="<?=$domaine?>/a-propos">A propos</a></li>
 
                                 <li><a href="">Contact</a></li>
 

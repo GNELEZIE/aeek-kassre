@@ -14,28 +14,23 @@ require_once 'layout/header.php';
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
             <div class="carousel-inner h-600">
-                <div class="carousel-item h-600 active">
-                    <img src="<?=$asset?>/media/sl1.jpg" class="d-block w-100 animate__animated animate__lightSpeedInRight" alt="...">
-                    <div class="carousel-caption d-md-block">
-                        <h1 class="font-70 animate__animated animate__zoomIn mb-3"> <span style="background: orange; padding: 10px 20px;">Bienvenue</span> </h1>
-                        <p class="text-white font-30 pt-3 animate__animated animate__slideInUp">Sur la plateforme des Elèves et Etudiants de Kasséré</p>
-                    </div>
-                </div>
-                <div class="carousel-item h-600">
-                    <img src="<?=$asset?>/media/sl1.jpg" class="d-block w-100  animate__animated animate__lightSpeedInRight" alt="...">
+                <?php
+                $list = $banniere->getAllBanniere();
+                $counter = 1;
+                while($ban = $list->fetch()){
 
-                    <div class="carousel-caption d-none d-md-block">
-                        <h1 class="font-57">Second slide label</h1>
-                        <p>Some representative placeholder content for the second slide.</p>
+                ?>
+                <div class="carousel-item h-600 <?php if($counter == 1){echo " active"; } ?>">
+                    <img src="<?=$domaine?>/uploads/<?=$ban['photo']?>" class="d-block w-100 animate__animated animate__lightSpeedInRight" alt="...">
+                    <div class="carousel-caption d-md-block">
+                        <h1 class="font-70 animate__animated animate__zoomIn mb-3" style="background: #ff4600; padding: 10px 20px;line-height:1.5;"> <span ><?=html_entity_decode(stripslashes($ban['titre']))?></span> </h1>
+                        <p class="text-white font-30 pt-3 animate__animated animate__slideInUp"><?=html_entity_decode(stripslashes($ban['sous_titre']))?></p>
                     </div>
                 </div>
-                <div class="carousel-item h-600">
-                    <img src="<?=$asset?>/media/sl1.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption  d-md-block">
-                        <h1 class="font-57">Third slide label</h1>
-                        <p>Some representative placeholder content for the third slide.</p>
-                    </div>
-                </div>
+                <?php
+                    $counter++;
+                }
+                ?>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -46,26 +41,8 @@ require_once 'layout/header.php';
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-<!--        <ul class="cb-slideshow">-->
-<!--            <li>-->
-<!--                <span>-->
-<!--                    <img src="--><?//=$asset?><!--/media/sl1.jpg" alt="thumb" style="width: 100%;height: 100%;">-->
-<!--                </span>-->
-<!--                <div></div>-->
-<!--            </li>-->
-<!--            <li>-->
-<!--                <span>-->
-<!--                  <img src="--><?//=$asset?><!--/media/sl.jpg" alt="thumb" style="width: 100%;height: 100%;">-->
-<!--                </span>-->
-<!--                <div></div>-->
-<!--            </li>-->
-<!--            <li>-->
-<!--                <span>-->
-<!--                  <img src="--><?//=$asset?><!--/media/sl2.jpg" alt="thumb" style="width: 100%;height: 100%;">-->
-<!--                </span>-->
-<!--                <div></div>-->
-<!--            </li>-->
-<!--        </ul
+
+<!--
                     <div class="banner-overlay"></div>
 
 >-->
@@ -92,6 +69,7 @@ require_once 'layout/header.php';
     <!--            </div>-->
     <!--        </div>-->
     <!--    </section>-->
+
     <section class="about about-two py-5" style="background: rgba(232, 246, 255, 0.69)">
         <div class="container py-5">
             <div class="row">
@@ -106,7 +84,7 @@ require_once 'layout/header.php';
                             <h2>A propos</h2>
                             <p><em>L'Association des Elèves et Etudiants de Kasséré(AEEK)</em></p>
                         </div>
-                        <p>Phoslorescently ntiate principle-centered networks via magnetic services a
+                        <p class="text-justify">Phoslorescently ntiate principle-centered networks via magnetic services a
                             Entusiastically streamline fullys tested metrics without freproof web services enabled
                             experiences bricks clicks are aparadigms Rapidiously evisculate standards compliant web
                             services are afor error-free Assertively engineer are Rapidiously evisculate standards
@@ -114,15 +92,11 @@ require_once 'layout/header.php';
                             compliant fullys tested metrics without futureproof web services an fullys tested
                             metrics without futureproof webfutureproof web services an fullys tested
                             metrics without futureproof webfutureproof web services an fullys tested
-                            metrics without futureproof webfutureproof web services an fullys tested
-                            metrics without futureproof webfutureproof web services an fullys tested
-                            metrics without futureproof webfutureproof web services an fullys tested
-                            webfutureproof web services an fullys tested
-                            metrics without futureproof webfutureproof web services an fullys tested
-                            metrics without futureproof webfutureproof web services an fullys tested
+
+
                         </p>
                         <ul class="about-button">
-                            <li><a href="#" class="default-button btn-green-transparent">En savoir plus <i class="fa fa-arrow-right" aria-hidden="true"></i> </a></li>
+                            <li><a href="#" class="default-button btn-green-transparent" style="padding: 7px 13px !important;">En savoir plus <i class="fa fa-arrow-right" aria-hidden="true"></i> </a></li>
                         </ul>
                     </div>
                 </div>
@@ -132,7 +106,7 @@ require_once 'layout/header.php';
         <!-- container -->
     </section>
 <section class="home-blog home-blog-10 side-image2" style="background-color: #f7fbff !important;">
-    <div class="container p-5">
+    <div class="container p-5 padd-home">
             <div class="row">
                     <div class="col-md-12 text-center pb-3">
                         <h3>Notre actualité</h3>
@@ -202,7 +176,7 @@ require_once 'layout/header.php';
     </section>
 
 
-    <section class="multi-gallery-section style2 padding-120">
+    <section class="multi-gallery-section style2 padding-120 top-home">
         <div class="container">
             <div class="row">
                 <div class="section-header style2">
