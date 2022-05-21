@@ -79,9 +79,17 @@ require_once 'layout/header.php';
                     <div class="post-bottom">
                         <ul class="tags">
                             <li><span style="text-transform: inherit !important;">Tags :</span></li>
-                            <li><a href="#">Business,</a></li>
-                            <li><a href="#">Event,</a></li>
-                            <li><a href="#">Marketing</a></li>
+                            <?php
+                               $artTg = $article_tags->getArticle_tagsByArtId($data['id_article']);
+                            while($artT = $artTg->fetch()) {
+                                $tags = $tag->getitagById($artT['tag_id'])->fetch();
+                                ?>
+                                <li><a href="#"><?=$tags['nom'];?>,</a></li>
+                            <?php
+                            }
+                            ?>
+
+
                         </ul>
                         <ul class="share event-social">
                             <li><span style="text-transform: inherit !important;">Partager sur :</span></li>

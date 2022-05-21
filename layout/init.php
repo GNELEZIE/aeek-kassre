@@ -6,7 +6,8 @@ session_start();
 include_once "function/domaine.php";
 include_once "function/mailing.php";
 include_once "function/function.php";
-
+include_once "function/detectdevice/Mobile_Detect.php";
+include_once "function/detectdevice/detect.php";
 
 
 //Include Connexion
@@ -22,6 +23,8 @@ include_once 'model/Comment.class.php';
 include_once 'model/Reponse.class.php';
 include_once 'model/Compter.class.php';
 include_once 'model/Banniere.class.php';
+include_once 'model/Tag.class.php';
+include_once 'model/Article_tags.class.php';
 
 
 
