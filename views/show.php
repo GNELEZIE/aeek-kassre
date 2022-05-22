@@ -84,7 +84,7 @@ require_once 'layout/header.php';
                             while($artT = $artTg->fetch()) {
                                 $tags = $tag->getitagById($artT['tag_id'])->fetch();
                                 ?>
-                                <li><a href="#"><?=$tags['nom'];?>,</a></li>
+                                <li><a href="#" style="background: #ffa5003b; color: #ff6809; border-radius: 6px; padding: 5px; margin: 5px;"><?=$tags['nom'];?></a></li>
                             <?php
                             }
                             ?>
@@ -155,7 +155,7 @@ require_once 'layout/header.php';
                                                     </div>
                                                 </div>
                                                 <textarea rows="3" name="messageR" id="messageR" class="comment-input input-style" placeholder="Message"></textarea>
-                                                <button type="submit" name="submit" class="comment-submit btn-transparence-orange mb-3" style="text-transform: inherit !important;font-weight: inherit !important;">Répondre</button>
+                                                <button type="submit" name="submit" class="comment-submit btn-transparence-orange mb-3" style="text-transform: inherit !important;font-weight: inherit !important;"> <i class="load"></i> Répondre</button>
                                             </form>
                                         </div>
                                     </div>
@@ -196,7 +196,7 @@ require_once 'layout/header.php';
                                                             </div>
                                                         </div>
                                                         <textarea rows="3" name="messageR" id="messageR" class="comment-input input-style" placeholder="Message"></textarea>
-                                                        <button type="submit" name="submit" class="comment-submit btn-transparence-orange mb-3" style="text-transform: inherit !important;font-weight: inherit !important;">Répondre</button>
+                                                        <button type="submit" name="submit" class="comment-submit btn-transparence-orange mb-3" style="text-transform: inherit !important;font-weight: inherit !important;"> <i class="load"></i> Répondre</button>
                                                     </form>
                                                 </div>
                                             </div>
@@ -235,7 +235,7 @@ require_once 'layout/header.php';
                             </div>
                         </div>
                         <textarea rows="6" name="message" id="message" class="comment-input input-style" placeholder="Message"></textarea>
-                        <button type="submit" name="submit" class="comment-submit" style="text-transform: inherit !important;font-weight: inherit !important;">Commenter</button>
+                        <button type="submit" name="submit" class="comment-submit" style="text-transform: inherit !important;font-weight: inherit !important;"> <i class="load"></i> Commenter</button>
                     </form>
                 </div>
                 <!-- comment-form -->
@@ -268,6 +268,7 @@ require_once 'layout/footer.php';
 $(document).ready(function(){
     $('#formComment').submit(function(e){
         e.preventDefault();
+        $('.load').html('<i class="loader-btn"></i>');
         var value = document.getElementById('formComment');
         var form = new FormData(value);
 
@@ -283,6 +284,7 @@ $(document).ready(function(){
 //                alert(data.data_info);
                 if(data.data_info == "ok"){
                     $('#message').val('');
+                    $('.load').html('');
                     swal("Commentaire ajouté!", "Votre commentaire a été ajouté avec succès et est en attente d\'aprobation par les administrateurs !", "success");
                 }else {
                     $('#message').val('');
@@ -297,6 +299,7 @@ $(document).ready(function(){
 
     $('#formRepondre').submit(function(e){
         e.preventDefault();
+        $('.load').html('<i class="loader-btn"></i>');
         var value = document.getElementById('formRepondre');
         var form = new FormData(value);
 
@@ -313,6 +316,7 @@ $(document).ready(function(){
                 if(data.data_info == "ok"){
                     $("#rep").load(location.href + " #rep");
                     $('#messageR').val('');
+                    $('.load').html('');
                     swal("Réponse ajoutée!", "Votre réponse a été ajouté avec succès !", "success")
                 }else {
                     $('#message').val('');
@@ -326,6 +330,7 @@ $(document).ready(function(){
     });
     $('#formRepondreR').submit(function(e){
         e.preventDefault();
+        $('.load').html('<i class="loader-btn"></i>');
         var value = document.getElementById('formRepondreR');
         var form = new FormData(value);
 
@@ -342,6 +347,7 @@ $(document).ready(function(){
                 if(data.data_info == "ok"){
                     $("#rep").load(location.href + " #rep");
                     $('#messageR').val('');
+                    $('.load').html('');
                     swal("Réponse ajoutée!", "Votre réponse a été ajouté avec succès !", "success")
                 }else {
                     $('#message').val('');

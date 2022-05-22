@@ -34,6 +34,18 @@
     <link href="<?=$asset?>/plugins/animate/animate.min.css" rel="stylesheet" />
 
     <style>
+        .loader-btn {
+            display: inline-block;
+            width: 0.9rem;
+            height: 0.9rem;
+            vertical-align: middle;
+            border: 0.2em solid currentColor;
+            border-right-color: transparent;
+            border-radius: 50%;
+            -webkit-animation: spinner-border .75s linear infinite;
+            animation: spinner-border .75s linear infinite;
+            align-self: center;
+        }
         .text-justify{
             text-align: justify !important;
         }

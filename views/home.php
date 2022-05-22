@@ -23,7 +23,7 @@ require_once 'layout/header.php';
                 <div class="carousel-item h-600 <?php if($counter == 1){echo " active"; } ?>">
                     <img src="<?=$domaine?>/uploads/<?=$ban['photo']?>" class="d-block w-100 animate__animated animate__lightSpeedInRight" alt="...">
                     <div class="carousel-caption d-md-block">
-                        <h1 class="font-70 animate__animated animate__zoomIn mb-3" style="background: #ff4600; padding: 10px 20px;line-height:1.5;"> <span ><?=html_entity_decode(stripslashes($ban['titre']))?></span> </h1>
+                        <h1 class="font-40 animate__animated animate__zoomIn mb-3" style="background: #ff4600; padding: 10px 20px;line-height:1.5;"> <span ><?=html_entity_decode(stripslashes($ban['titre']))?></span> </h1>
                         <p class="text-white font-30 pt-3 animate__animated animate__slideInUp"><?=html_entity_decode(stripslashes($ban['sous_titre']))?></p>
                     </div>
                 </div>
