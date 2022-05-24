@@ -123,7 +123,7 @@
 				},
 				labels: {
 					'errorMessage': 'Source could not be found...',
-					'sequenceInfo.of': ' of ',
+					'sequenceInfo.of': ' sur ',
 					'close': 'Close',
 					'navigator.prev': 'Prev',
 					'navigator.next': 'Next',

@@ -19,15 +19,15 @@ require_once 'layout/header.php';
                 $counter = 1;
                 while($ban = $list->fetch()){
 
-                ?>
-                <div class="carousel-item h-600 <?php if($counter == 1){echo " active"; } ?>">
-                    <img src="<?=$domaine?>/uploads/<?=$ban['photo']?>" class="d-block w-100 animate__animated animate__lightSpeedInRight" alt="...">
-                    <div class="carousel-caption d-md-block">
-                        <h1 class="font-40 animate__animated animate__zoomIn mb-3" style="background: #ff4600; padding: 10px 20px;line-height:1.5;"> <span ><?=html_entity_decode(stripslashes($ban['titre']))?></span> </h1>
-                        <p class="text-white font-30 pt-3 animate__animated animate__slideInUp"><?=html_entity_decode(stripslashes($ban['sous_titre']))?></p>
+                    ?>
+                    <div class="carousel-item h-600 <?php if($counter == 1){echo " active"; } ?>">
+                        <img src="<?=$domaine?>/uploads/<?=$ban['photo']?>" class="d-block w-100 animate__animated animate__lightSpeedInRight" alt="...">
+                        <div class="carousel-caption d-md-block">
+                            <h1 class="font-40 animate__animated animate__zoomIn mb-3" style="background: #ff4600; padding: 10px 20px;line-height:1.5;"> <span ><?=html_entity_decode(stripslashes($ban['titre']))?></span> </h1>
+                            <p class="text-white font-30 pt-3 animate__animated animate__slideInUp"><?=html_entity_decode(stripslashes($ban['sous_titre']))?></p>
+                        </div>
                     </div>
-                </div>
-                <?php
+                    <?php
                     $counter++;
                 }
                 ?>
@@ -42,10 +42,10 @@ require_once 'layout/header.php';
             </button>
         </div>
 
-<!--
-                    <div class="banner-overlay"></div>
+        <!--
+                            <div class="banner-overlay"></div>
 
->-->
+        >-->
 
     </section>
 
@@ -105,30 +105,30 @@ require_once 'layout/header.php';
         </div>
         <!-- container -->
     </section>
-<section class="home-blog home-blog-10 side-image2" style="background-color: #f7fbff !important;">
-    <div class="container p-5 padd-home">
+    <section class="home-blog home-blog-10 side-image2" style="background-color: #f7fbff !important;">
+        <div class="container p-5 padd-home">
             <div class="row">
-                    <div class="col-md-12 text-center pb-3">
-                        <h3>Notre actualité</h3>
-                    </div>
-                        <?php
+                <div class="col-md-12 text-center pb-3">
+                    <h3>Notre actualité</h3>
+                </div>
+                <?php
 
-                        while($dat = $listes->fetch()){
-                            $commentExiste = $comment->getCommentById($dat['id_article']);
-                            if($nbCom = $commentExiste->fetch()){
-                                $nbComments = $comment->nbComment($dat['id_article'])->fetch();
-                                $nbCom = $comment->getCommentByIdNb($dat['id_article'])->fetch();
-                                $nbRepon = $reponse->nbReponses($nbCom['id_comment']);
-                                if($nbReponses = $nbRepon->fetch()) {
-                                    $nbreps = $nbReponses['nb'];
-                                }else{
-                                    $nbreps = 0;
-                                }
-                                $nbrComt = $nbComments['nb'] + $nbreps ;
-                            }else{
-                                $nbrComt = 0;
-                            }
-                            ?>
+                while($dat = $listes->fetch()){
+                    $commentExiste = $comment->getCommentById($dat['id_article']);
+                    if($nbCom = $commentExiste->fetch()){
+                        $nbComments = $comment->nbComment($dat['id_article'])->fetch();
+                        $nbCom = $comment->getCommentByIdNb($dat['id_article'])->fetch();
+                        $nbRepon = $reponse->nbReponses($nbCom['id_comment']);
+                        if($nbReponses = $nbRepon->fetch()) {
+                            $nbreps = $nbReponses['nb'];
+                        }else{
+                            $nbreps = 0;
+                        }
+                        $nbrComt = $nbComments['nb'] + $nbreps ;
+                    }else{
+                        $nbrComt = 0;
+                    }
+                    ?>
                     <div class="col-md-4">
                         <div class="blog-item">
                             <div class="blog-thumb">
@@ -149,9 +149,9 @@ require_once 'layout/header.php';
                                 </ul>
                                 <div class="content-part">
                                     <h4><a href="<?=$domaine?>/show/<?=$dat['slug']?>" class="font-17"  style="text-transform: initial !important;"><?=reduit_text(html_entity_decode(stripslashes($dat['titre'])),'27');?></a></h4>
-                                        <div class="param">
-                                            <?=reduit_text(html_entity_decode(stripslashes($dat['description'])),'250','...');?>
-                                        </div>
+                                    <div class="param">
+                                        <?=reduit_text(html_entity_decode(stripslashes($dat['description'])),'250','...');?>
+                                    </div>
                                     <div class="link pt-3">
                                         <a href="<?=$domaine?>/show/<?=$dat['slug']?>" class="btn-transparence-orange" style="padding: 10px 18px !important;">Lire plus <i class="fa fa-arrow-right" aria-hidden="true"></i> </a>
                                     </div>
@@ -163,16 +163,16 @@ require_once 'layout/header.php';
 
                         </div>
                     </div>
-                        <?php
-                        }
-                        ?>
+                <?php
+                }
+                ?>
                 <div class="col-md-12">
                     <div class="read text-center">
                         <a href="<?=$domaine?>/blog" class="btn-green-transparent p-3" style="padding: 12px 44px !important; border-radius: 3px;">Lire plus <i class="fa fa-arrow-right" aria-hidden="true"></i> </a>
                     </div>
                 </div>
             </div>
-      </div>
+        </div>
     </section>
 
 
@@ -185,107 +185,40 @@ require_once 'layout/header.php';
                         Develop Vertical Oportunities Rather Than</p>
                 </div>
                 <div class="section-wrapper row">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="gallery-item">
-                            <span></span>
-                            <div class="gallery-item-inner">
-                                <div class="gallery-thumb">
-                                    <img src="<?=$asset?>/images/12-09-18/photo-gallery/image1.jpg" alt="image">
-                                    <div class="gallery-thumb-ovarlay"></div>
-                                    <a href="#" class="gallery-icon">
-                                        <i class="fa fa-camera" aria-hidden="true"></i>
-                                    </a>
-                                </div>
-                                <div class="gallery-title">
-                                    <h4><a href="#">Theater Conference 2014</a>   </h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="gallery-item">
-                            <span></span>
-                            <div class="gallery-item-inner">
-                                <div class="gallery-thumb">
-                                    <img src="<?=$asset?>/images/12-09-18/photo-gallery/image2.jpg" alt="image">
-                                    <div class="gallery-thumb-ovarlay"></div>
-                                    <a href="" class="gallery-icon">
-                                        <i class="fa fa-camera" aria-hidden="true"></i>
-                                    </a>
-                                </div>
-                                <div class="gallery-title">
-                                    <h4>Business Conference 2015</h4>
+                    <?php
+                    $listeEven= $events->getSixEvents();
+                    while($dataEvent = $listeEven->fetch()) {
+                        $gal = $gallerie->getGallerieByIdForHome($dataEvent['id_events']);
+                        if($gallerieData = $gal->fetch()){
+                            $couver = $gallerieData['photo'];
+                        }else{
+                            $couver = "gallery.jpg";
+                        }
+                        ?>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="gallery-item">
+                                <span></span>
+
+                                <div class="gallery-item-inner">
+                                    <div class="gallery-thumb">
+                                        <img src="<?=$domaine?>/uploads/<?=$couver;?>" class="gal-home" alt="image">
+
+                                        <div class="gallery-thumb-ovarlay"></div>
+                                        <a href="<?=$domaine?>/gallerie/<?=$dataEvent['slug'];?>" class="gallery-icon">
+                                            <i class="fa fa-camera" aria-hidden="true"></i>
+                                        </a>
+                                    </div>
+                                    <div class="gallery-title">
+                                        <h4><a href="<?=$domaine?>/gallerie/<?=$dataEvent['slug'];?>"><?=html_entity_decode(stripcslashes($dataEvent['nom'])).' '.month_fr(date('m', strtotime($dataEvent['date_events']))).','.date('Y', strtotime($dataEvent['date_events']));?></a></h4>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="gallery-item">
-                            <span></span>
-                            <div class="gallery-item-inner">
-                                <div class="gallery-thumb">
-                                    <img src="<?=$asset?>/images/12-09-18/photo-gallery/image3.jpg" alt="image">
-                                    <div class="gallery-thumb-ovarlay"></div>
-                                    <a href="" class="gallery-icon">
-                                        <i class="fa fa-camera" aria-hidden="true"></i>
-                                    </a>
-                                </div>
-                                <div class="gallery-title">
-                                    <h4>Music Fastival 2016</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="gallery-item">
-                            <span></span>
-                            <div class="gallery-item-inner">
-                                <div class="gallery-thumb">
-                                    <img src="<?=$asset?>/images/12-09-18/photo-gallery/image4.jpg" alt="image">
-                                    <div class="gallery-thumb-ovarlay"></div>
-                                    <a href="" class="gallery-icon">
-                                        <i class="fa fa-camera" aria-hidden="true"></i>
-                                    </a>
-                                </div>
-                                <div class="gallery-title">
-                                    <h4>Wedding Ceremony 2021</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="gallery-item">
-                            <span></span>
-                            <div class="gallery-item-inner">
-                                <div class="gallery-thumb">
-                                    <img src="<?=$asset?>/images/12-09-18/photo-gallery/image5.jpg" alt="image">
-                                    <div class="gallery-thumb-ovarlay"></div>
-                                    <a href="" class="gallery-icon">
-                                        <i class="fa fa-camera" aria-hidden="true"></i>
-                                    </a>
-                                </div>
-                                <div class="gallery-title">
-                                    <h4>Sports Conference 2021</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="gallery-item">
-                            <span></span>
-                            <div class="gallery-item-inner">
-                                <div class="gallery-thumb">
-                                    <img src="<?=$asset?>/images/12-09-18/photo-gallery/image6.jpg" alt="image">
-                                    <div class="gallery-thumb-ovarlay"></div>
-                                    <a href="" class="gallery-icon">
-                                        <i class="fa fa-camera" aria-hidden="true"></i>
-                                    </a>
-                                </div>
-                                <div class="gallery-title">
-                                    <h4>Travel Conference 2021</h4>
-                                </div>
-                            </div>
-                        </div>
+                    <?php
+                    }
+                    ?>
+                    <div class="col-md-12 text-center pt-3">
+                        <a href="<?=$domaine?>/events" class="btn-transparence-orange" style="padding: 10px 18px !important;">Voir plus d'evènements <i class="fa fa-arrow-right" aria-hidden="true"></i> </a>
                     </div>
                 </div>
             </div>
@@ -452,6 +385,6 @@ require_once 'layout/header.php';
         <!-- container -->
     </section>
 
-    <?php
-    require_once 'layout/footer.php';
-    ?>
+<?php
+require_once 'layout/footer.php';
+?>

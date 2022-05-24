@@ -34,6 +34,17 @@
     <link href="<?=$asset?>/plugins/animate/animate.min.css" rel="stylesheet" />
 
     <style>
+    .gallery-two.gallery.gallery-uhv .grid-item .gallery-thumb {
+        border-radius: 7px;
+        border: 2px solid #ff7729;
+    }
+    .gallery-two .gallery-item img{
+        border-radius: 5px !important;
+    }
+        .gal-home{
+            object-fit: cover;
+            height: 257px;
+        }
         .loader-btn {
             display: inline-block;
             width: 0.9rem;
@@ -257,6 +268,7 @@
                                 <li><a href="<?=$domaine?>/a-propos">A propos</a></li>
 
                                 <li><a href="">Contact</a></li>
+                                <li><a href="<?=$domaine?>/emplois"> Emplois</a></li>
 
                                 <li><a href="<?=$domaine?>/blog">Blog</a></li>
                                 <li><a href="">Aeek tv</a></li>
