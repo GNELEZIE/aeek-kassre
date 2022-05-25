@@ -51,11 +51,31 @@ require_once 'layout/header.php';
 
 <section class="become-sponsor padding-120">
     <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="serviceBox">
+                    <div class="service-icon">
+                        <span><i class="fa fa-globe"></i></span>
+                    </div>
+                    <h3 class="title">Web Design</h3>
+                    <p class="description">Lorem ipsum dolor sit amet conse ctetur adipisicing elit. Qui quaerat fugit quas veniam perferendis repudiandae sequi, dolore quisquam illum.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="serviceBox pink">
+                    <div class="service-icon">
+                        <span><i class="fa fa-rocket"></i></span>
+                    </div>
+                    <h3 class="title">Web Development</h3>
+                    <p class="description">Lorem ipsum dolor sit amet conse ctetur adipisicing elit. Qui quaerat fugit quas veniam perferendis repudiandae sequi, dolore quisquam illum.</p>
+                </div>
+            </div>
+        </div>
         <div class="become-sponsor-list row">
             <div class="col-lg-4 col-md-6">
                 <div class="become-sponsor-item">
                     <div class="sponsor-thumb">
-                        <img src="images/become-sponsor/01.jpg" alt="sponsor">
+                        <img src="<?=$asset?>/images/become-sponsor/01.jpg" alt="sponsor">
                     </div>
                     <div class="sponsor-content">
                         <h4>Main Sponsor</h4>
@@ -69,7 +89,7 @@ require_once 'layout/header.php';
             <div class="col-lg-4 col-md-6">
                 <div class="become-sponsor-item">
                     <div class="sponsor-thumb">
-                        <img src="images/become-sponsor/02.jpg" alt="sponsor">
+                        <img src="<?=$asset?>/images/become-sponsor/02.jpg" alt="sponsor">
                     </div>
                     <div class="sponsor-content">
                         <h4>Platinum Sponsor</h4>
@@ -83,7 +103,7 @@ require_once 'layout/header.php';
             <div class="col-lg-4 col-md-6">
                 <div class="become-sponsor-item">
                     <div class="sponsor-thumb">
-                        <img src="images/become-sponsor/03.jpg" alt="sponsor">
+                        <img src="<?=$asset?>/images/become-sponsor/03.jpg" alt="sponsor">
                     </div>
                     <div class="sponsor-content">
                         <h4>Gold Sponsor</h4>
@@ -97,7 +117,7 @@ require_once 'layout/header.php';
             <div class="col-lg-4 col-md-6">
                 <div class="become-sponsor-item">
                     <div class="sponsor-thumb">
-                        <img src="images/become-sponsor/04.jpg" alt="sponsor">
+                        <img src="<?=$asset?>/images/become-sponsor/04.jpg" alt="sponsor">
                     </div>
                     <div class="sponsor-content">
                         <h4>Silver Sponsor</h4>
@@ -111,7 +131,7 @@ require_once 'layout/header.php';
             <div class="col-lg-4 col-md-6">
                 <div class="become-sponsor-item">
                     <div class="sponsor-thumb">
-                        <img src="images/become-sponsor/05.jpg" alt="sponsor">
+                        <img src="<?=$asset?>/images/become-sponsor/05.jpg" alt="sponsor">
                     </div>
                     <div class="sponsor-content">
                         <h4>Break Sponsor</h4>
@@ -125,7 +145,7 @@ require_once 'layout/header.php';
             <div class="col-lg-4 col-md-6">
                 <div class="become-sponsor-item">
                     <div class="sponsor-thumb">
-                        <img src="images/become-sponsor/06.jpg" alt="sponsor">
+                        <img src="<?=$asset?>/images/become-sponsor/06.jpg" alt="sponsor">
                     </div>
                     <div class="sponsor-content">
                         <h4>Hosting Sponsor</h4>
@@ -139,7 +159,7 @@ require_once 'layout/header.php';
             <div class="col-lg-4 col-md-6">
                 <div class="become-sponsor-item">
                     <div class="sponsor-thumb">
-                        <img src="images/become-sponsor/07.jpg" alt="sponsor">
+                        <img src="<?=$asset?>/images/become-sponsor/07.jpg" alt="sponsor">
                     </div>
                     <div class="sponsor-content">
                         <h4>Social Sponsor</h4>
@@ -153,7 +173,7 @@ require_once 'layout/header.php';
             <div class="col-lg-4 col-md-6">
                 <div class="become-sponsor-item">
                     <div class="sponsor-thumb">
-                        <img src="images/become-sponsor/08.jpg" alt="sponsor">
+                        <img src="<?=$asset?>/images/become-sponsor/08.jpg" alt="sponsor">
                     </div>
                     <div class="sponsor-content">
                         <h4>Giveaway Sponsor</h4>
@@ -167,7 +187,7 @@ require_once 'layout/header.php';
             <div class="col-lg-4 col-md-6">
                 <div class="become-sponsor-item">
                     <div class="sponsor-thumb">
-                        <img src="images/become-sponsor/09.jpg" alt="sponsor">
+                        <img src="<?=$asset?>/images/become-sponsor/09.jpg" alt="sponsor">
                     </div>
                     <div class="sponsor-content">
                         <h4>Community Sponsor</h4>
