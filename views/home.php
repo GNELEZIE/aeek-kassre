@@ -181,8 +181,7 @@ require_once 'layout/header.php';
             <div class="row">
                 <div class="section-header style2">
                     <h3>La Gallerie de nos evenements</h3>
-                    <p>Synergistically Visualize Competitive Action Ttems For Open Source Opportunities Professionaly
-                        Develop Vertical Oportunities Rather Than</p>
+
                 </div>
                 <div class="section-wrapper row">
                     <?php
@@ -204,12 +203,12 @@ require_once 'layout/header.php';
                                         <img src="<?=$domaine?>/uploads/<?=$couver;?>" class="gal-home" alt="image">
 
                                         <div class="gallery-thumb-ovarlay"></div>
-                                        <a href="<?=$domaine?>/gallerie/<?=$dataEvent['slug'];?>" class="gallery-icon">
+                                        <a href="<?=$domaine?>/galerie/<?=$dataEvent['slug'];?>" class="gallery-icon">
                                             <i class="fa fa-camera" aria-hidden="true"></i>
                                         </a>
                                     </div>
                                     <div class="gallery-title">
-                                        <h4><a href="<?=$domaine?>/gallerie/<?=$dataEvent['slug'];?>"><?=html_entity_decode(stripcslashes($dataEvent['nom'])).' '.month_fr(date('m', strtotime($dataEvent['date_events']))).','.date('Y', strtotime($dataEvent['date_events']));?></a></h4>
+                                        <h4><a href="<?=$domaine?>/galerie/<?=$dataEvent['slug'];?>"><?=html_entity_decode(stripcslashes($dataEvent['nom'])).' '.month_fr(date('m', strtotime($dataEvent['date_events']))).','.date('Y', strtotime($dataEvent['date_events']));?></a></h4>
                                     </div>
                                 </div>
                             </div>
@@ -228,8 +227,7 @@ require_once 'layout/header.php';
     <section class="speakers speakers-two padding-120">
         <div class="container">
             <div class="section-header text-center">
-                <h3>Membres du bureau</h3>
-                <p><em>Quickly harness dynamic thinking through value added models.</em></p>
+                <h3>L'équipe</h3>
             </div>
             <div class="speaker-items">
                 <div class="row">
@@ -241,10 +239,10 @@ require_once 'layout/header.php';
                             </div>
                             <!-- speaker-image -->
                             <div class="speaker-content">
-                                <span class="icon"><i class="fa fa-microphone" aria-hidden="true"></i></span>
-                                <div class="details">
-                                    <h4><a href="speaker-details.html">robot smith</a></h4>
-                                    <span>Founder</span>
+                                <span class="icon"><i class="fa fa-cube" aria-hidden="true"></i></span>
+                                <div class="details text-center">
+                                    <h4><a href="#">Ouattara Gnelezie</a></h4>
+                                    <span> Développeur web </span>
                                 </div>
                             </div>
                             <!-- speaker-content -->
@@ -293,7 +291,7 @@ require_once 'layout/header.php';
                                 <img src="<?=$asset?>/media/me.jpg" alt="speaker image"
                                      class="img-responsive">
                             </div>
-                            <!-- speaker-image -->
+
                             <div class="speaker-content">
                                 <span class="icon"><i class="fa fa-microphone" aria-hidden="true"></i></span>
                                 <div class="details">
@@ -301,82 +299,9 @@ require_once 'layout/header.php';
                                     <span>Founder</span>
                                 </div>
                             </div>
-                            <!-- speaker-content -->
                         </div>
-                        <!-- speaker-item -->
                     </div>
-                    <div class="col-lg-3 col-md-6 col-xs-12">
-                        <div class="speaker-item">
-                            <div class="speaker-image">
-                                <img src="<?=$asset?>/media/me.jpg" alt="speaker image"
-                                     class="img-responsive">
-                            </div>
-                            <!-- speaker-image -->
-                            <div class="speaker-content">
-                                <span class="icon"><i class="fa fa-microphone" aria-hidden="true"></i></span>
-                                <div class="details">
-                                    <h4><a href="speaker-details.html">Raisen Aero</a></h4>
-                                    <span>Founder</span>
-                                </div>
-                            </div>
-                            <!-- speaker-content -->
-                        </div>
-                        <!-- speaker-item -->
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-xs-12">
-                        <div class="speaker-item">
-                            <div class="speaker-image">
-                                <img src="<?=$asset?>/media/me.jpg" alt="speaker image"
-                                     class="img-responsive">
-                            </div>
-                            <!-- speaker-image -->
-                            <div class="speaker-content">
-                                <span class="icon"><i class="fa fa-microphone" aria-hidden="true"></i></span>
-                                <div class="details">
-                                    <h4><a href="speaker-details.html">robot smith</a></h4>
-                                    <span>Founder</span>
-                                </div>
-                            </div>
-                            <!-- speaker-content -->
-                        </div>
-                        <!-- speaker-item -->
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-xs-12">
-                        <div class="speaker-item">
-                            <div class="speaker-image">
-                                <img src="<?=$asset?>/media/me.jpg" alt="speaker image"
-                                     class="img-responsive">
-                            </div>
-                            <!-- speaker-image -->
-                            <div class="speaker-content">
-                                <span class="icon"><i class="fa fa-microphone" aria-hidden="true"></i></span>
-                                <div class="details">
-                                    <h4><a href="speaker-details.html">janaton smith</a></h4>
-                                    <span>Founder</span>
-                                </div>
-                            </div>
-                            <!-- speaker-content -->
-                        </div>
-                        <!-- speaker-item -->
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-xs-12">
-                        <div class="speaker-item">
-                            <div class="speaker-image">
-                                <img src="<?=$asset?>/media/me.jpg" alt="speaker image"
-                                     class="img-responsive">
-                            </div>
-                            <!-- speaker-image -->
-                            <div class="speaker-content">
-                                <span class="icon"><i class="fa fa-microphone" aria-hidden="true"></i></span>
-                                <div class="details">
-                                    <h4><a href="speaker-details.html">WILLIAM JOHN</a></h4>
-                                    <span>Founder</span>
-                                </div>
-                            </div>
-                            <!-- speaker-content -->
-                        </div>
-                        <!-- speaker-item -->
-                    </div>
+
                 </div>
                 <!-- row -->
             </div>

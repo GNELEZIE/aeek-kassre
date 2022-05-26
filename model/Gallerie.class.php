@@ -7,9 +7,9 @@ class Gallerie{
 
 
 // Read
-    public function getGallerieById($id){
+    public function getGallerieById($id,$debut, $fin){
         $query = "SELECT * FROM gallerie
-        WHERE event_id = :id ORDER BY event_id DESC";
+        WHERE event_id = :id ORDER BY event_id DESC LIMIT $debut, $fin";
         $rs = $this->bdd->prepare($query);
         $rs->execute(array(
             "id" => $id

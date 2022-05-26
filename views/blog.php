@@ -9,21 +9,22 @@ $vus = $compter->compter_visite();
 
 if(isset($_GET['page']) and is_numeric($_GET['page'])){
     $numPage = $_GET['page'];
-    $fin = 4 * $numPage;
-    $debut = $fin - 4;
+    $fin = 6 * $numPage;
+    $debut = $fin - 6;
 }else{
     $numPage = 1;
     $debut = 0;
-    $fin = 4;
+    $fin = 6;
 }
 
 $res = $article->getAllNbrArticle();
 
 if($nbre = $res->fetch()){
-    $pages = $nbre['nb']/4;
+    $pages = ceil($nbre['nb']/6);
 }else{
     $pages = 1;
 }
+$pagination_list = '';
 $myPage = '/blog';
 $liste = $article->getAllNbrArticles($debut,$fin);
 
@@ -111,7 +112,7 @@ require_once 'layout/header.php';
 
 
     <div class="text-center">
-        <ul class="pagination">
+        <ul class="pagination" style="display: inherit !important;">
             <?php
             if(isset($_GET['page']) and is_numeric($_GET['page'])){
                 if($pages < 2 ){

@@ -1,3 +1,12 @@
+<!--Votre ID client-->
+<!--399335338678-7jl81epn31t53utpji0hlllu3pv2g476.apps.googleusercontent.com-->
+<!---->
+<!--Votre code secret client-->
+<!--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-->
+
+
+
+
 <li class="comment-item">
     <div class="image"><img src="<?=$asset?>/media/anonym.png" alt="Blog image" class="img-responsive"></div>
     <div class="com-content">

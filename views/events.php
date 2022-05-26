@@ -31,12 +31,12 @@ require_once 'layout/header.php';
                                     <img src="<?=$domaine?>/uploads/<?=$couver;?>" class="gal-home" alt="image">
 
                                     <div class="gallery-thumb-ovarlay"></div>
-                                    <a href="<?=$domaine?>/gallerie/<?=$dataEvent['slug'];?>" class="gallery-icon">
+                                    <a href="<?=$domaine?>/galerie/<?=$dataEvent['slug'];?>" class="gallery-icon">
                                         <i class="fa fa-camera" aria-hidden="true"></i>
                                     </a>
                                 </div>
                                 <div class="gallery-title">
-                                    <h4><a href="<?=$domaine?>/gallerie/<?=$dataEvent['slug'];?>"><?=html_entity_decode(stripcslashes($dataEvent['nom'])).' '.month_fr(date('m', strtotime($dataEvent['date_events']))).','.date('Y', strtotime($dataEvent['date_events']));?></a></h4>
+                                    <h4><a href="<?=$domaine?>/galerie/<?=$dataEvent['slug'];?>"><?=html_entity_decode(stripcslashes($dataEvent['nom'])).' '.month_fr(date('m', strtotime($dataEvent['date_events']))).','.date('Y', strtotime($dataEvent['date_events']));?></a></h4>
                                 </div>
                             </div>
                         </div>
