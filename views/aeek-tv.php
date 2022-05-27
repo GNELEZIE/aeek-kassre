@@ -33,7 +33,7 @@ require_once 'layout/header.php';
     </div>
 </section>
 
-<section class="venue-section padding-120">
+<section class="venue-section padding-120" style=" background:#eee;">
     <div class="container">
         <div class="section-header text-center">
             <h3>Enjoy Your Stay</h3>
@@ -41,30 +41,57 @@ require_once 'layout/header.php';
         </div>
 
         <div class="section-wrapper">
-            <div class="venue-list">
-                <div class="row">
-                    <?php
-                    foreach($result['items'] as $item) {
-                        ?>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="venue-item">
-                                <div class="venue-thumb">
-                                    <img src="<?=$item['snippet']['thumbnails']['medium']['url']?>" alt="venue">
-                                </div>
-                                <div class="venue-content">
-                                    <h4><?=$item['snippet']['title']?></h4>
 
-                                    <p><span>Room Rate: </span>$150/per day</p>
+            <div class="container row">
+                <?php
+                foreach($result['items'] as $item) {
+                ?>
+                <div class="col-md-4">
+                    <div class="box rte" style="position: relative">
+                        <a href="https://www.youtube.com/watch?v=<?=$item['id']['videoId']?>" data-lity>
+                            <img src="<?=$item['snippet']['thumbnails']['medium']['url']?>" class="img-youtub" alt="venue">
 
-                                    <p><span>Distance from Venue: </span>0.50 KM</p>
-                                </div>
-                            </div>
+                            <div class="video-play"></div>
+<!--                        <iframe width="100%" height="300" src="https://www.youtube.com/embed/ESXgJ9-H-2U" frameborder="0" allowfullscreen=""></iframe>-->
+                        <div class="inf p-3">
+                            <h2 class="boxHeadline" style="line-height: 1.5; font-size: 18px;"><?=$item['snippet']['title']?></h2>
+                            <h3 class="boxHeadlineSub" style="line-height: 1.3; font-size: 16px;"><?=$item['snippet']['description']?></h3>
                         </div>
-                    <?php
-                    }
-                    ?>
-
+                        </a>
+                    </div>
                 </div>
+            <?php
+            }
+            ?>
+            </div>
+
+
+
+
+            <div class="venue-list">
+<!--                <div class="row">-->
+<!--                    --><?php
+//                    foreach($result['items'] as $item) {
+//                        ?>
+<!--                        <div class="col-lg-4 col-md-6">-->
+<!--                            <div class="venue-item">-->
+<!--                                <div class="venue-thumb">-->
+<!--                                    <img src="--><?//=$item['snippet']['thumbnails']['medium']['url']?><!--" alt="venue">-->
+<!--                                </div>-->
+<!--                                <div class="venue-content">-->
+<!--                                    <h4>--><?//=$item['snippet']['title']?><!--</h4>-->
+<!---->
+<!--                                    <p><span>Room Rate: </span>$150/per day</p>-->
+<!---->
+<!--                                    <p><span>Distance from Venue: </span>0.50 KM</p>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    --><?php
+//                    }
+//                    ?>
+<!---->
+<!--                </div>-->
             </div>
         </div>
     </div>

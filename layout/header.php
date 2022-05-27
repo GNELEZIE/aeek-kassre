@@ -32,8 +32,66 @@
 <link href="<?=$asset?>/plugins/ticker/css/main.css" rel="stylesheet">
 <link href="<?=$asset?>/plugins/sweetalert/sweet-alert.css" rel="stylesheet" />
 <link href="<?=$asset?>/plugins/animate/animate.min.css" rel="stylesheet" />
-
+<!--<link href="--><?//=$asset?><!--/plugins/lity/assets/style.css" media="all" rel="stylesheet" type="text/css">-->
+<!--<link href="--><?//=$asset?><!--/plugins/lity/assets/prism.css" media="all" rel="stylesheet" type="text/css">-->
+<link href="<?=$asset?>/plugins/lity/dist/lity.css" rel="stylesheet"/>
 <style>
+
+.img-youtub{
+    object-fit: cover;
+    height: 272px;
+    width: 100%;
+}
+.video-play {
+    position: absolute;
+    top: 28%;
+    text-align: center;
+    height: 50px;
+    left: 0;
+    right: 0;
+    background: url(<?=$asset?>/media/play1.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50%;
+    transform: scale(1.3);
+    text-shadow: 2px 3px 1px #ccc;
+}
+.video-play:hover {
+    transform: scale(1.7);
+    -webkit-transition: all 0.5s ease 0s;
+    -o-transition: all 0.5s ease 0s;
+    transition: all 0.5s ease 0s;
+}
+
+.box {
+    background: #fff;
+
+    margin: 0 0 24px 0;
+}
+
+.rte .boxHeadline {
+    font-size: 18px;
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin: 0 0 25px 0;
+}
+
+.rte .boxHeadline+.boxHeadlineSub {
+    margin: -18px 0 30px 0;
+}
+
+.rte .boxHeadlineSub {
+    font-size: 14px;
+    font-size: 1.4rem;
+    font-weight: 400;
+    font-style: italic;
+    color: #919599;
+    margin: 0 0 25px 0;
+}
+
+
+
+
 .current{
     background: #ff46000a !important;
     color: #ff4600 !important;
