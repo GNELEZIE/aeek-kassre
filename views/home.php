@@ -226,88 +226,35 @@ require_once 'layout/header.php';
 
     <section class="speakers speakers-two padding-120">
         <div class="container">
-            <div class="section-header text-center">
-                <h3>L'équipe</h3>
-            </div>
-            <div class="speaker-items">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 col-xs-12">
-                        <div class="speaker-item">
-                            <div class="speaker-image">
-                                <img src="<?=$asset?>/media/me.jpg" alt="speaker image"
-                                     class="img-responsive">
-                            </div>
-                            <!-- speaker-image -->
-                            <div class="speaker-content">
-                                <span class="icon"><i class="fa fa-cube" aria-hidden="true"></i></span>
-                                <div class="details text-center">
-                                    <h4><a href="#">Ouattara Gnelezie</a></h4>
-                                    <span> Développeur web </span>
-                                </div>
-                            </div>
-                            <!-- speaker-content -->
-                        </div>
-                        <!-- speaker-item -->
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-xs-12">
-                        <div class="speaker-item">
-                            <div class="speaker-image">
-                                <img src="<?=$asset?>/media/me.jpg" alt="speaker image"
-                                     class="img-responsive">
-                            </div>
-                            <!-- speaker-image -->
-                            <div class="speaker-content">
-                                <span class="icon"><i class="fa fa-microphone" aria-hidden="true"></i></span>
-                                <div class="details">
-                                    <h4><a href="speaker-details.html">janaton smith</a></h4>
-                                    <span>Founder</span>
-                                </div>
-                            </div>
-                            <!-- speaker-content -->
-                        </div>
-                        <!-- speaker-item -->
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-xs-12">
-                        <div class="speaker-item">
-                            <div class="speaker-image">
-                                <img src="<?=$asset?>/media/me.jpg" alt="speaker image"
-                                     class="img-responsive">
-                            </div>
-                            <!-- speaker-image -->
-                            <div class="speaker-content">
-                                <span class="icon"><i class="fa fa-microphone" aria-hidden="true"></i></span>
-                                <div class="details">
-                                    <h4><a href="speaker-details.html">WILLIAM JOHN</a></h4>
-                                    <span>Founder</span>
-                                </div>
-                            </div>
-                            <!-- speaker-content -->
-                        </div>
-                        <!-- speaker-item -->
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-xs-12">
-                        <div class="speaker-item">
-                            <div class="speaker-image">
-                                <img src="<?=$asset?>/media/me.jpg" alt="speaker image"
-                                     class="img-responsive">
-                            </div>
-
-                            <div class="speaker-content">
-                                <span class="icon"><i class="fa fa-microphone" aria-hidden="true"></i></span>
-                                <div class="details">
-                                    <h4><a href="speaker-details.html">Raisen Aero</a></h4>
-                                    <span>Founder</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+            <div class="section ourTeam">
+                <div class="section-header style2">
+                    <h3>Notre équipe</h3>
                 </div>
-                <!-- row -->
+
+                <div class="row">
+                    <div class="col-md-3 i">
+                        <div class="c text-center teamBox">
+                            <div class="wrap">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="#" width="270" height="270" class="img-responsive">
+                                <div class="info">
+                                    <h3 class="name">John Doe</h3>
+                                    <h4 class="position">Chief Executive Officer</h4>
+                                </div>
+                            </div>
+                            <div class="more">
+                                <p>Ut sed consectetur ligula. Aenean id nibh accumsan, pre tium nulla in, lacinia aecenas mollis. Sed mauris at sollicitudin. Etiam maximus mauris vel leo mattis, non venenatis magna finibus vestibulum.</p>
+                                <div class="socials">
+                                    <a href="#" title="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                                    <a href="#" title="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                                    <a href="#" title="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+                                    <a href="#" title="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!-- speaker-items -->
         </div>
-        <!-- container -->
     </section>
 
 <?php
