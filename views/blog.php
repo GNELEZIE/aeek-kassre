@@ -338,38 +338,11 @@ require_once 'layout/footer.php';
 ?>
 <script src="<?=$asset?>/plugins/ticker/js/jquery.newsTicker.js"></script>
 <script>
-
-
-    var nt_example2 = $('#nt-example2').newsTicker({
-        row_height: 60,
-        max_rows: 1,
-        speed: 300,
-        duration: 6000,
-        prevButton: $('#nt-example2-prev'),
-        nextButton: $('#nt-example2-next'),
-        hasMoved: function() {
-            $('#nt-example2-infos-container').fadeOut(200, function(){
-                $('#nt-example2-infos .infos-hour').text($('#nt-example2 li:first span').text());
-                $('#nt-example2-infos .infos-text').text($('#nt-example2 li:first').data('infos'));
-                $(this).fadeIn(400);
-            });
-        },
-        pause: function() {
-            $('#nt-example2 li i').removeClass('fa-play').addClass('fa-pause');
-        },
-        unpause: function() {
-            $('#nt-example2 li i').removeClass('fa-pause').addClass('fa-play');
-        }
+    var nt_example1 = $('#nt-example1').newsTicker({
+        row_height: 80,
+        max_rows: 3,
+        duration: 4000,
+        prevButton: $('#nt-example1-prev'),
+        nextButton: $('#nt-example1-next')
     });
-    $('#nt-example2-infos').hover(function() {
-        nt_example2.newsTicker('pause');
-    }, function() {
-        nt_example2.newsTicker('unpause');
-    });
-    var state = 'stopped';
-    var speed;
-    var add;
-
-
-
 </script>

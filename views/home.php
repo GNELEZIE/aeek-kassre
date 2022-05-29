@@ -2,6 +2,7 @@
 
 $listes = $article->getHomeAllArticle();
 $vus = $compter->compter_visite();
+$team = $admin->getAllAdmin();
 require_once 'layout/header.php';
 ?>
 
@@ -224,7 +225,7 @@ require_once 'layout/header.php';
         </div>
     </section>
 
-    <section class="speakers speakers-two padding-120">
+    <section class="speakers speakers-two padding-120" style="background: #e8f6ff73 !important;">
         <div class="container">
             <div class="section ourTeam">
                 <div class="section-header style2">
@@ -232,26 +233,36 @@ require_once 'layout/header.php';
                 </div>
 
                 <div class="row">
-                    <div class="col-md-3 i">
-                        <div class="c text-center teamBox">
-                            <div class="wrap">
-                                <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="#" width="270" height="270" class="img-responsive">
-                                <div class="info">
-                                    <h3 class="name">John Doe</h3>
-                                    <h4 class="position">Chief Executive Officer</h4>
+
+                    <?php
+                    while($teamData = $team->fetch()){
+                        ?>
+                        <div class="col-md-3 i">
+                            <div class="c text-center teamBox">
+                                <div class="wrap">
+                                    <img src="<?=$domaine?>/uploads/<?=$teamData['photo'];?>" alt="#" class="img-responsive" style="object-fit: cover; height: 248px;">
+                                    <div class="info">
+                                        <h3 class="name" style="font-size: 20px !important;"><?=html_entity_decode(stripcslashes($teamData['nom'])).' '.html_entity_decode(stripcslashes($teamData['prenom'])) ?></h3>
+                                        <h4 class="position"  style="font-size: 17px !important;"><?=html_entity_decode(stripcslashes($teamData['fonction']))?></h4>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="more">
-                                <p>Ut sed consectetur ligula. Aenean id nibh accumsan, pre tium nulla in, lacinia aecenas mollis. Sed mauris at sollicitudin. Etiam maximus mauris vel leo mattis, non venenatis magna finibus vestibulum.</p>
-                                <div class="socials">
-                                    <a href="#" title="#" class="facebook"><i class="fa fa-facebook"></i></a>
-                                    <a href="#" title="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                                    <a href="#" title="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
-                                    <a href="#" title="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                                <div class="more">
+                                    <p><?=html_entity_decode(stripcslashes($teamData['biographie']))?></p>
+                                    <div class="socials">
+                                        <a href="<?=$teamData['facebook']?>" title="Facebook" class="facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+                                        <a href="<?=$teamData['twitter']?>" title="Twitter" class="twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+                                        <a href="<?=$teamData['linkedin']?>" title="Linkedin" class="linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
+                                        <a href="<?=$teamData['instagram']?>" title="Instagram" class="instagram" target="_blank"><i class="fa fa-instagram"></i></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    <?php
+                    }
+                    ?>
+
+
+
                 </div>
             </div>
         </div>

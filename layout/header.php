@@ -36,7 +36,12 @@
 <!--<link href="--><?//=$asset?><!--/plugins/lity/assets/prism.css" media="all" rel="stylesheet" type="text/css">-->
 <link href="<?=$asset?>/plugins/lity/dist/lity.css" rel="stylesheet"/>
 <style>
-
+#nt-example1 li{
+    font-size: 15px !important;
+}
+.instagram {
+    background: linear-gradient(to right bottom, #de497b 0%, #e1164f 100%) !important;
+}
 .img-youtub{
     object-fit: cover;
     height: 272px;

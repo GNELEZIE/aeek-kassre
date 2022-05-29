@@ -1,40 +1,31 @@
+<?php
+$sideArticle = $article->getAllArticleSide();
+$categ = $categorie->getAllCategorie();
+$lastArticl = $article->getLastArticleSide();
+if($lastArticle = $lastArticl->fetch()){
+    $lastArticles = reduit_text(html_entity_decode(stripslashes($lastArticle['description'])),'500','...');
+}else{
+    $lastArticles ='';
+}
+?>
 <div class="sidebar">
 <div class="sidebar-item">
     <h4 class="sidebar-title pt-3">Flash info</h4>
     <div id="nt-example2-container m-3">
-     <div class="cont">
-         <ul id="nt-example2" class="pt-3">
-             <?php
-             $sideArticle = $article->getAllArticleSide();
-             $categ = $categorie->getAllCategorie();
-             $lastArticl = $article->getLastArticleSide();
-             if($lastArticle = $lastArticl->fetch()){
-                 $lastArticles = reduit_text(html_entity_decode(stripslashes($lastArticle['description'])),'500','...');
-             }else{
-                 $lastArticles ='';
-             }
-             while($results = $sideArticle->fetch()){
-                 $inf = reduit_text(html_entity_decode(stripslashes($results['description'])),'500','...');
-                 ?>
+        <div id="nt-example1-container">
+            <i class="fa fa-arrow-up" id="nt-example1-prev"></i>
+            <ul id="nt-example1">
+                <?php
 
-
-                 <li data-infos=''>
-                     <i class="fa fa-fw fa-play state"></i>
-                     <span class="hour"><?=date_hour($results['date_article'])?></span> <?=reduit_text(html_entity_decode(stripslashes($results['titre'])),'100');?>
-                 </li>
-
-             <?php
-             }
-             ?>
-         </ul>
-     </div>
-        <div id="nt-example2-infos-container">
-            <div id="nt-example2-infos-triangle"></div>
-            <div id="nt-example2-infos" class="row">
-                <div class="col-xs-8">
-                    <div class="infos-text"><?=$lastArticles;?></div>
-                </div>
-            </div>
+                while($results = $sideArticle->fetch()){
+                $inf = reduit_text(html_entity_decode(stripslashes($results['titre'])),'250','...');
+                ?>
+                <li><?=$inf?><a href="<?=$domaine?>/show/<?=$results['slug']?>" style="color: #ff4500"> Voir plus...</a></li>
+                <?php
+                }
+                ?>
+            </ul>
+            <i class="fa fa-arrow-down" id="nt-example1-next"></i>
         </div>
     </div>
 </div>
@@ -100,20 +91,20 @@
 
     </div>
 </div>
-<div class="sidebar-item">
-    <h4 class="sidebar-title pt-3">Tags populaires</h4>
-
-    <ul class="tags">
-        <li><a href="#">children</a></li>
-        <li><a href="#">school</a></li>
-        <li><a href="#">shop</a></li>
-        <li><a href="#">water</a></li>
-        <li><a href="#">charity</a></li>
-        <li><a href="#">heaven</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Contant</a></li>
-        <li><a href="#">Design</a></li>
-    </ul>
-
-</div>
+<!--<div class="sidebar-item">-->
+<!--    <h4 class="sidebar-title pt-3">Tags populaires</h4>-->
+<!---->
+<!--    <ul class="tags">-->
+<!--        <li><a href="#">children</a></li>-->
+<!--        <li><a href="#">school</a></li>-->
+<!--        <li><a href="#">shop</a></li>-->
+<!--        <li><a href="#">water</a></li>-->
+<!--        <li><a href="#">charity</a></li>-->
+<!--        <li><a href="#">heaven</a></li>-->
+<!--        <li><a href="#">Blog</a></li>-->
+<!--        <li><a href="#">Contant</a></li>-->
+<!--        <li><a href="#">Design</a></li>-->
+<!--    </ul>-->
+<!---->
+<!--</div>-->
 </div>

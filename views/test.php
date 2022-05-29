@@ -172,6 +172,23 @@ require_once 'layout/header.php';
     </style>
 </head>
 <div class="container">
+<!--    <ul id="nt-example2" class="pt-3">-->
+<!--        --><?php
+//
+//        while($results = $sideArticle->fetch()){
+//            $inf = reduit_text(html_entity_decode(stripslashes($results['description'])),'500','...');
+//            ?>
+<!---->
+<!---->
+<!--            <li data-infos=''>-->
+<!--                <i class="fa fa-fw fa-play state"></i>-->
+<!--                <span class="hour">--><?//=date_hour($results['date_article'])?><!--</span> --><?//=reduit_text(html_entity_decode(stripslashes($results['titre'])),'100');?>
+<!--            </li>-->
+<!---->
+<!--        --><?php
+//        }
+//        ?>
+<!--    </ul>-->
     <div class="section ourTeam">
         <header class="text-center">
             <h2>Meet <strong>Our Team</strong></h2>

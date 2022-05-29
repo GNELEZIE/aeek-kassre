@@ -63588,7 +63588,7 @@ body.rtl {
 }
 
 .instagram {
-    background: linear-gradient(to right bottom, #de497b 0%, #e1164f 100%);
+    background: linear-gradient(to right bottom, #de497b 0%, #e1164f 100%) !important;
 }
 
 .linkedin {
