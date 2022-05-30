@@ -20,7 +20,10 @@ if($lastArticle = $lastArticl->fetch()){
                 while($results = $sideArticle->fetch()){
                 $inf = reduit_text(html_entity_decode(stripslashes($results['titre'])),'250','...');
                 ?>
-                <li><?=$inf?><a href="<?=$domaine?>/show/<?=$results['slug']?>" style="color: #ff4500"> Voir plus...</a></li>
+                <li>
+                    <?=$inf?><a href="<?=$domaine?>/show/<?=$results['slug']?>" style="color: #ff4500"> Voir plus...</a>
+                    <div class="barInfo"></div>
+                </li>
                 <?php
                 }
                 ?>
