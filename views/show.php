@@ -38,7 +38,7 @@ $_SESSION['myformkey'] = $token;
 require_once 'layout/header.php';
 ?>
 
-<section class="blog-page padding-120">
+<section class="blog-page padding-120" style="background-color: #fafafa !important;">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-12 col-xs-12 sticky-widget">
