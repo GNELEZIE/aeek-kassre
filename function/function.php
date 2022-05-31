@@ -112,6 +112,13 @@ if(!function_exists('date_time_fr')){
         return $dc;
     }
 }
+if(!function_exists('time_fr')){
+    function time_fr($date){
+        $dc = new DateTime($date);
+        $dc = $dc->format('H:i');
+        return $dc;
+    }
+}
 
 if(!function_exists('date_time_fr_court')){
     function date_time_fr_court($date){

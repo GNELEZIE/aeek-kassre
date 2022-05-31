@@ -36,16 +36,43 @@
 <!--<link href="--><?//=$asset?><!--/plugins/lity/assets/prism.css" media="all" rel="stylesheet" type="text/css">-->
 <link href="<?=$asset?>/plugins/lity/dist/lity.css" rel="stylesheet"/>
 <style>
-.barInfo{
-    height: 25px;
-    width: 2px;
-    background: #d81631;
-    z-index: 10;
-    margin: auto;
+
+/*#nt-example1 li {*/
+    /*color: #4e4e4e;*/
+    /*background: #F2F2F2;*/
+    /*overflow: hidden;*/
+    /*height: 80px;*/
+    /*padding: 10px;*/
+    /*line-height: 30px;*/
+    /*list-style: none;*/
+    /*font-size: 24px;*/
+    /*text-align: left;*/
+    /*border-bottom: 1px dotted #2c8162;*/
+/*}*/
+
+/*#nt-example1{*/
+    /*height: inherit !important;*/
+/*}*/
+#nt-example1-container {
+    padding: 15px !important;
 
 }
-
-#nt-example1 li{
+.heure-box span{
+    border: 2px solid #ff7729;
+    padding: 7px;
+    border-bottom: 0;
+    color: #fff;
+    background: #ff7729;
+}
+.liBars{
+    margin: 15px !important;
+}
+.infos-bars{
+    box-shadow: rgb(50 50 93 / 25%) 0 2px 5px -1px, rgb(0 0 0 / 30%) 0 1px 3px -1px;
+  padding: 10px;
+    border: 2px solid #ff7729;
+}
+#flashBox li{
     font-size: 15px !important;
     margin: 20px;
 }
@@ -161,6 +188,13 @@
     margin-top: 74px;
     background: #ff7729;
     height: 100px;
+}
+.bar{
+    height: 25px;
+    width: 2px;
+    background: #ff7729;
+    z-index: 10;
+    margin: auto;
 }
 .carousel-caption{
     bottom: 13rem !important;

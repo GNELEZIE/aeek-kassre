@@ -11,24 +11,30 @@ if($lastArticle = $lastArticl->fetch()){
 <div class="sidebar">
 <div class="sidebar-item">
     <h4 class="sidebar-title pt-3">Flash info</h4>
+
     <div id="nt-example2-container m-3">
         <div id="nt-example1-container">
-            <i class="fa fa-arrow-up" id="nt-example1-prev"></i>
+<!--            <i class="fa fa-arrow-up" id="nt-example1-prev"></i>-->
             <ul id="nt-example1">
                 <?php
 
                 while($results = $sideArticle->fetch()){
-                $inf = reduit_text(html_entity_decode(stripslashes($results['titre'])),'250','...');
+                $inf = reduit_text(html_entity_decode(stripslashes($results['titre'])),'50','...');
                 ?>
                 <li>
-                    <?=$inf?><a href="<?=$domaine?>/show/<?=$results['slug']?>" style="color: #ff4500"> Voir plus...</a>
-                    <div class="barInfo"></div>
+                    <div class="heure-box text-center">
+                        <span class="font-13"><?= date_fr($results['date_article']).'| '.time_fr($results['date_article']) ?></span>
+                    </div>
+                    <div class="infos-bars">
+                        <?=$inf?><a href="<?=$domaine?>/show/<?=$results['slug']?>" style="color: #ff4500"> Voir plus...</a>
+                    </div>
+                    <div class="text-center bar"></div>
                 </li>
                 <?php
                 }
-                ?>
+//                ?>
             </ul>
-            <i class="fa fa-arrow-down" id="nt-example1-next"></i>
+<!--            <i class="fa fa-arrow-down" id="nt-example1-next"></i>-->
         </div>
     </div>
 </div>
