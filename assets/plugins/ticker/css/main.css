@@ -378,18 +378,18 @@ h2.header {
 }
 
 
-/* nt-example1 */
+/* flash-infos */
 
-#nt-example1 {
+#flash-infos {
 	max-width: 620px;
 	margin: auto;
 }
 
-#nt-example1-container {
+#flash-infos-container {
 	text-align: center;
 }
 
-#nt-example1-container i {
+#flash-infos-container i {
 	font-size: 36px;
 	margin: 8px;
 	cursor: pointer;
@@ -400,11 +400,11 @@ h2.header {
     transition: all 0.1s ease-in-out;
 }
 
-#nt-example1-container i:hover {
+#flash-infos-container i:hover {
 	color: #333;
 }
 
-#nt-example1 li {
+#flash-infos li {
 	color: #4e4e4e;
 	background: #F2F2F2;
 	overflow: hidden;
@@ -417,7 +417,7 @@ h2.header {
 	border-bottom: 1px dotted #2c8162;
 }
 
-#nt-example1 li:hover {
+#flash-infos li:hover {
 	background: #FFF;
 }
 

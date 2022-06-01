@@ -189,6 +189,27 @@ require_once 'layout/header.php';
 //        }
 //        ?>
 <!--    </ul>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <div class="section ourTeam">
         <header class="text-center">
             <h2>Meet <strong>Our Team</strong></h2>

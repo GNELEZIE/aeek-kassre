@@ -37,7 +37,7 @@
 <link href="<?=$asset?>/plugins/lity/dist/lity.css" rel="stylesheet"/>
 <style>
 
-/*#nt-example1 li {*/
+/*#flash-infos li {*/
     /*color: #4e4e4e;*/
     /*background: #F2F2F2;*/
     /*overflow: hidden;*/
@@ -50,17 +50,17 @@
     /*border-bottom: 1px dotted #2c8162;*/
 /*}*/
 
-#nt-example1{
+#flash-infos{
     height: 275px !important;
 }
-#nt-example1 li{
+#flash-infos li{
    background: inherit !important;
     height: 140px !important;
     padding: 0 !important;
     border-bottom : 0 !important;
 
 }
-#nt-example1-container {
+#flash-infos-container {
     padding: 15px !important;
 
 }
