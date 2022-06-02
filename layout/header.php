@@ -678,6 +678,7 @@ header.style-3 div.menu-fixed::before {
                                 <li><a href="<?=$domaine?>/events"  class="<?php if($lien == 'events'){echo 'current';} ;?>">Galerie</a></li>
                                 <li><a href="<?=$domaine?>/aeek-tv"  class="<?php if($lien == 'aeek-tv'){echo 'current';} ;?>">Aeek tv</a></li>
                                 <li><a href="<?=$domaine?>/emplois"  class="<?php if($lien == 'emplois'){echo 'current';} ;?>"> Ofres d'emplois</a></li>
+                                <li><a href="<?=$domaine?>/les-cv"  class="<?php if($lien == 'les-cv'){echo 'current';} ;?>"> Les CV</a></li>
 
                             </ul>
                         </div>
