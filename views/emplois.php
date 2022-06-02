@@ -39,171 +39,133 @@ require_once 'layout/header.php';
 <section class="page-header">
     <div class="container">
         <div class="content">
-            <h4>Pongala info</h4>
+            <h4>Offre d'emplois</h4>
             <ul>
                 <li><span><i class="fa fa-home" aria-hidden="true"></i></span> <a href="<?=$domaine?>">Acceuil</a>
                     <span>|</span></li>
-                <li>Blog</li>
+                <li>Emplois</li>
             </ul>
         </div>
     </div>
 </section>
 
-<section class="become-sponsor padding-120">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="serviceBox">
-                    <div class="service-icon">
-                        <span><i class="fa fa-globe"></i></span>
+<div class="container-fluid pb-5"  style="background: rgb(232 246 255 / 31%);">
+    <section class="container pt-3">
+        <div class="row pt-5 mt-30">
+            <div class="col-md-4 mb-30 pb-5" style="margin-bottom: 35px">
+                <a class="box-card p-3" href="#">
+                    <div class="box-shadow bg-white rounded-circle mx-auto text-center" style="width: 90px; height: 90px; margin-top: -45px;">
+                        <img src="<?=$asset?>/media/jeune.png" alt="" class="head-icon">
                     </div>
-                    <h3 class="title">Web Design</h3>
-                    <p class="description">Lorem ipsum dolor sit amet conse ctetur adipisicing elit. Qui quaerat fugit quas veniam perferendis repudiandae sequi, dolore quisquam illum.</p>
-                </div>
+                    <div class="box-card-body text-center">
+                        <h3 class="box-card-title pt-1">Auxiliaire en pharmacie</h3>
+                        <p class="font-13 pt-2 mb-0">Publie le 02/06/2022 <span>|</span> N'DOUCI <span>|</span> <font color="#FF0000">Fin: 09/06/2022</font> </p>
+                        <p class="box-card-text">Assister le pharmacien dans: - l'approvisionnement en m2dicaments; - le suivi des stocks de m2dicaments; - la gestion des stocks de medicaments et autres produits pharmaceutiques</p>
+                        <span class=" font-weight-bold">En savoir plus&nbsp;<i class="fe-icon-arrow-right"></i></span>
+                    </div>
+                </a>
+<!--                <span class="ribban">New</span>-->
             </div>
-            <div class="col-md-4">
-                <div class="serviceBox pink">
-                    <div class="service-icon">
-                        <span><i class="fa fa-rocket"></i></span>
+            <div class="col-md-4 mb-30 pb-5" style="margin-bottom: 35px">
+                <a class="box-card p-3" href="#">
+                    <div class="box-shadow bg-white rounded-circle mx-auto text-center" style="width: 90px; height: 90px; margin-top: -45px;">
+                        <img src="<?=$asset?>/media/jeune.png" alt="" class="head-icon">
                     </div>
-                    <h3 class="title">Web Development</h3>
-                    <p class="description">Lorem ipsum dolor sit amet conse ctetur adipisicing elit. Qui quaerat fugit quas veniam perferendis repudiandae sequi, dolore quisquam illum.</p>
-                </div>
-            </div>
-        </div>
-        <div class="become-sponsor-list row">
-            <div class="col-lg-4 col-md-6">
-                <div class="become-sponsor-item">
-                    <div class="sponsor-thumb">
-                        <img src="<?=$asset?>/images/become-sponsor/01.jpg" alt="sponsor">
+                    <div class="box-card-body text-center">
+                        <h3 class="box-card-title pt-1">Auxiliaire en pharmacie</h3>
+                        <p class="font-13 pt-2 mb-0">Publie le 02/06/2022 <span>|</span> N'DOUCI <span>|</span> <font color="#FF0000">Fin: 09/06/2022</font> </p>
+                        <p class="box-card-text">Assister le pharmacien dans: - l'approvisionnement en m2dicaments; - le suivi des stocks de m2dicaments; - la gestion des stocks de medicaments et autres produits pharmaceutiques</p>
+                        <span class=" font-weight-bold">En savoir plus&nbsp;<i class="fe-icon-arrow-right"></i></span>
                     </div>
-                    <div class="sponsor-content">
-                        <h4>Main Sponsor</h4>
-                        <p>Dynamically simplfy awesome impactful intellectual capital rather than acvtve an
-                            ontualy formulate unique networks</p>
-                        <a href="#" class="sponsor-btn">Become a Sponsor</a>
+                </a>
+            </div><div class="col-md-4 mb-30 pb-5" style="margin-bottom: 35px">
+                <a class="box-card p-3" href="#">
+                    <div class="box-shadow bg-white rounded-circle mx-auto text-center" style="width: 90px; height: 90px; margin-top: -45px;">
+                        <img src="<?=$asset?>/media/jeune.png" alt="" class="head-icon">
                     </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="become-sponsor-item">
-                    <div class="sponsor-thumb">
-                        <img src="<?=$asset?>/images/become-sponsor/02.jpg" alt="sponsor">
+                    <div class="box-card-body text-center">
+                        <h3 class="box-card-title pt-1">Auxiliaire en pharmacie</h3>
+                        <p class="font-13 pt-2 mb-0">Publie le 02/06/2022 <span>|</span> N'DOUCI <span>|</span> <font color="#FF0000">Fin: 09/06/2022</font> </p>
+                        <p class="box-card-text">Assister le pharmacien dans: - l'approvisionnement en m2dicaments; - le suivi des stocks de m2dicaments; - la gestion des stocks de medicaments et autres produits pharmaceutiques</p>
+                        <span class=" font-weight-bold">En savoir plus&nbsp;<i class="fe-icon-arrow-right"></i></span>
                     </div>
-                    <div class="sponsor-content">
-                        <h4>Platinum Sponsor</h4>
-                        <p>Dynamically simplfy awesome impactful intellectual capital rather than acvtve an
-                            ontualy formulate unique networks</p>
-                        <a href="#" class="sponsor-btn">Become a Sponsor</a>
+                </a>
+            </div><div class="col-md-4 mb-30 pb-5" style="margin-bottom: 35px">
+                <a class="box-card p-3" href="#">
+                    <div class="box-shadow bg-white rounded-circle mx-auto text-center" style="width: 90px; height: 90px; margin-top: -45px;">
+                        <img src="<?=$asset?>/media/jeune.png" alt="" class="head-icon">
                     </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="become-sponsor-item">
-                    <div class="sponsor-thumb">
-                        <img src="<?=$asset?>/images/become-sponsor/03.jpg" alt="sponsor">
+                    <div class="box-card-body text-center">
+                        <h3 class="box-card-title pt-1">Auxiliaire en pharmacie</h3>
+                        <p class="font-13 pt-2 mb-0">Publie le 02/06/2022 <span>|</span> N'DOUCI <span>|</span> <font color="#FF0000">Fin: 09/06/2022</font> </p>
+                        <p class="box-card-text">Assister le pharmacien dans: - l'approvisionnement en m2dicaments; - le suivi des stocks de m2dicaments; - la gestion des stocks de medicaments et autres produits pharmaceutiques</p>
+                        <span class=" font-weight-bold">En savoir plus&nbsp;<i class="fe-icon-arrow-right"></i></span>
                     </div>
-                    <div class="sponsor-content">
-                        <h4>Gold Sponsor</h4>
-                        <p>Dynamically simplfy awesome impactful intellectual capital rather than acvtve an
-                            ontualy formulate unique networks</p>
-                        <a href="#" class="sponsor-btn">Become a Sponsor</a>
+                </a>
+            </div><div class="col-md-4 mb-30 pb-5" style="margin-bottom: 35px">
+                <a class="box-card p-3" href="#">
+                    <div class="box-shadow bg-white rounded-circle mx-auto text-center" style="width: 90px; height: 90px; margin-top: -45px;">
+                        <img src="<?=$asset?>/media/jeune.png" alt="" class="head-icon">
                     </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="become-sponsor-item">
-                    <div class="sponsor-thumb">
-                        <img src="<?=$asset?>/images/become-sponsor/04.jpg" alt="sponsor">
+                    <div class="box-card-body text-center">
+                        <h3 class="box-card-title pt-1">Auxiliaire en pharmacie</h3>
+                        <p class="font-13 pt-2 mb-0">Publie le 02/06/2022 <span>|</span> N'DOUCI <span>|</span> <font color="#FF0000">Fin: 09/06/2022</font> </p>
+                        <p class="box-card-text">Assister le pharmacien dans: - l'approvisionnement en m2dicaments; - le suivi des stocks de m2dicaments; - la gestion des stocks de medicaments et autres produits pharmaceutiques</p>
+                        <span class=" font-weight-bold">En savoir plus&nbsp;<i class="fe-icon-arrow-right"></i></span>
                     </div>
-                    <div class="sponsor-content">
-                        <h4>Silver Sponsor</h4>
-                        <p>Dynamically simplfy awesome impactful intellectual capital rather than acvtve an
-                            ontualy formulate unique networks</p>
-                        <a href="#" class="sponsor-btn">Become a Sponsor</a>
+                </a>
+            </div><div class="col-md-4 mb-30 pb-5" style="margin-bottom: 35px">
+                <a class="box-card p-3" href="#">
+                    <div class="box-shadow bg-white rounded-circle mx-auto text-center" style="width: 90px; height: 90px; margin-top: -45px;">
+                        <img src="<?=$asset?>/media/jeune.png" alt="" class="head-icon">
                     </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="become-sponsor-item">
-                    <div class="sponsor-thumb">
-                        <img src="<?=$asset?>/images/become-sponsor/05.jpg" alt="sponsor">
+                    <div class="box-card-body text-center">
+                        <h3 class="box-card-title pt-1">Auxiliaire en pharmacie</h3>
+                        <p class="font-13 pt-2 mb-0">Publie le 02/06/2022 <span>|</span> N'DOUCI <span>|</span> <font color="#FF0000">Fin: 09/06/2022</font> </p>
+                        <p class="box-card-text">Assister le pharmacien dans: - l'approvisionnement en m2dicaments; - le suivi des stocks de m2dicaments; - la gestion des stocks de medicaments et autres produits pharmaceutiques</p>
+                        <span class=" font-weight-bold">En savoir plus&nbsp;<i class="fe-icon-arrow-right"></i></span>
                     </div>
-                    <div class="sponsor-content">
-                        <h4>Break Sponsor</h4>
-                        <p>Dynamically simplfy awesome impactful intellectual capital rather than acvtve an
-                            ontualy formulate unique networks</p>
-                        <a href="#" class="sponsor-btn">Become a Sponsor</a>
+                </a>
+            </div><div class="col-md-4 mb-30 pb-5" style="margin-bottom: 35px">
+                <a class="box-card p-3" href="#">
+                    <div class="box-shadow bg-white rounded-circle mx-auto text-center" style="width: 90px; height: 90px; margin-top: -45px;">
+                        <img src="<?=$asset?>/media/jeune.png" alt="" class="head-icon">
                     </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="become-sponsor-item">
-                    <div class="sponsor-thumb">
-                        <img src="<?=$asset?>/images/become-sponsor/06.jpg" alt="sponsor">
+                    <div class="box-card-body text-center">
+                        <h3 class="box-card-title pt-1">Auxiliaire en pharmacie</h3>
+                        <p class="font-13 pt-2 mb-0">Publie le 02/06/2022 <span>|</span> N'DOUCI <span>|</span> <font color="#FF0000">Fin: 09/06/2022</font> </p>
+                        <p class="box-card-text">Assister le pharmacien dans: - l'approvisionnement en m2dicaments; - le suivi des stocks de m2dicaments; - la gestion des stocks de medicaments et autres produits pharmaceutiques</p>
+                        <span class=" font-weight-bold">En savoir plus&nbsp;<i class="fe-icon-arrow-right"></i></span>
                     </div>
-                    <div class="sponsor-content">
-                        <h4>Hosting Sponsor</h4>
-                        <p>Dynamically simplfy awesome impactful intellectual capital rather than acvtve an
-                            ontualy formulate unique networks</p>
-                        <a href="#" class="sponsor-btn">Become a Sponsor</a>
+                </a>
+            </div><div class="col-md-4 mb-30 pb-5" style="margin-bottom: 35px">
+                <a class="box-card p-3" href="#">
+                    <div class="box-shadow bg-white rounded-circle mx-auto text-center" style="width: 90px; height: 90px; margin-top: -45px;">
+                        <img src="<?=$asset?>/media/jeune.png" alt="" class="head-icon">
                     </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="become-sponsor-item">
-                    <div class="sponsor-thumb">
-                        <img src="<?=$asset?>/images/become-sponsor/07.jpg" alt="sponsor">
+                    <div class="box-card-body text-center">
+                        <h3 class="box-card-title pt-1">Auxiliaire en pharmacie</h3>
+                        <p class="font-13 pt-2 mb-0">Publie le 02/06/2022 <span>|</span> N'DOUCI <span>|</span> <font color="#FF0000">Fin: 09/06/2022</font> </p>
+                        <p class="box-card-text">Assister le pharmacien dans: - l'approvisionnement en m2dicaments; - le suivi des stocks de m2dicaments; - la gestion des stocks de medicaments et autres produits pharmaceutiques</p>
+                        <span class=" font-weight-bold">En savoir plus&nbsp;<i class="fe-icon-arrow-right"></i></span>
                     </div>
-                    <div class="sponsor-content">
-                        <h4>Social Sponsor</h4>
-                        <p>Dynamically simplfy awesome impactful intellectual capital rather than acvtve an
-                            ontualy formulate unique networks</p>
-                        <a href="#" class="sponsor-btn">Become a Sponsor</a>
+                </a>
+            </div><div class="col-md-4 mb-30 pb-5" style="margin-bottom: 35px">
+                <a class="box-card p-3" href="#">
+                    <div class="box-shadow bg-white rounded-circle mx-auto text-center" style="width: 90px; height: 90px; margin-top: -45px;">
+                        <img src="<?=$asset?>/media/jeune.png" alt="" class="head-icon">
                     </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="become-sponsor-item">
-                    <div class="sponsor-thumb">
-                        <img src="<?=$asset?>/images/become-sponsor/08.jpg" alt="sponsor">
+                    <div class="box-card-body text-center">
+                        <h3 class="box-card-title pt-1">Auxiliaire en pharmacie</h3>
+                        <p class="font-13 pt-2 mb-0">Publie le 02/06/2022 <span>|</span> N'DOUCI <span>|</span> <font color="#FF0000">Fin: 09/06/2022</font> </p>
+                        <p class="box-card-text">Assister le pharmacien dans: - l'approvisionnement en m2dicaments; - le suivi des stocks de m2dicaments; - la gestion des stocks de medicaments et autres produits pharmaceutiques</p>
+                        <span class=" font-weight-bold">En savoir plus&nbsp;<i class="fe-icon-arrow-right"></i></span>
                     </div>
-                    <div class="sponsor-content">
-                        <h4>Giveaway Sponsor</h4>
-                        <p>Dynamically simplfy awesome impactful intellectual capital rather than acvtve an
-                            ontualy formulate unique networks</p>
-                        <a href="#" class="sponsor-btn">Become a Sponsor</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="become-sponsor-item">
-                    <div class="sponsor-thumb">
-                        <img src="<?=$asset?>/images/become-sponsor/09.jpg" alt="sponsor">
-                    </div>
-                    <div class="sponsor-content">
-                        <h4>Community Sponsor</h4>
-                        <p>Dynamically simplfy awesome impactful intellectual capital rather than acvtve an
-                            ontualy formulate unique networks</p>
-                        <a href="#" class="sponsor-btn">Become a Sponsor</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-12 text-center">
-                <a href="#" class="become-btn">Become a sponsor</a>
+                </a>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+</div>
 
 
 
