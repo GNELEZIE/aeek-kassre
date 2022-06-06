@@ -70,7 +70,7 @@ require_once 'layout/header.php';
                         </div>
                         <div class="box-card-body text-center">
                             <h3 class="box-card-title pt-3" style="line-height: 1.3;"><?= html_entity_decode(stripslashes($dataEmploi['nom'])) ?></h3>
-                            <p class="font-13 pt-2 mb-0">Publie le <?=date_fr($dataEmploi['date_debut'])?> <span>|</span> <?= html_entity_decode(stripslashes($dataEmploi['ville'])) ?> <span>|</span> <font color="#FF0000">Fin: <?=date_fr($dataEmploi['date_fin'])?></font> </p>
+                            <p class="font-13 pt-2 mb-0">Publie le <?=date_fr($dataEmploi['date_debut'])?> <span>| <i class="fa fa-map"></i> </span> <?= html_entity_decode(stripslashes($dataEmploi['ville'])) ?> <span>|</span> <font color="#FF0000">Fin: <?=date_fr($dataEmploi['date_fin'])?></font> </p>
                             <p class="box-card-text"><?= html_entity_decode(stripslashes($dataEmploi['description'])) ?></p>
                             <span class=" font-weight-bold">En savoir plus&nbsp;<i class="fe-icon-arrow-right"></i></span>
                             <span class="ribban font-11"><?= $contract ?></span>

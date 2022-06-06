@@ -36,7 +36,33 @@
 <!--<link href="--><?//=$asset?><!--/plugins/lity/assets/prism.css" media="all" rel="stylesheet" type="text/css">-->
 <link href="<?=$asset?>/plugins/lity/dist/lity.css" rel="stylesheet"/>
 <style>
-
+.input-styles{
+    border: 2px solid #ced4da !important;
+    box-shadow: none !important;
+    background: none !important;
+    text-align: left !important;
+    cursor: auto;
+    border-radius: 6px;
+    width: 100% !important;
+}
+.event-social li a {
+    font-size: 15px !important;
+    height: 35px !important;
+    width: 35px !important;
+}
+footer p {
+    color: #696969 !important;
+    font-size: 13px !important;
+    text-align: left !important;
+}
+footer h2 {
+    color: #696969 !important;
+    font-size: 23px !important;
+    text-align: left !important;
+}
+footer ul{
+    text-align: left !important;
+}
 .h-339{
     height: 339px !important;
 }
@@ -185,6 +211,9 @@ width: 51px;
 }
 .liBars{
     margin: 15px !important;
+}
+.color-orange{
+    color: #ff7729 !important;
 }
 .infos-bars{
     box-shadow: rgb(50 50 93 / 25%) 0 2px 5px -1px, rgb(0 0 0 / 30%) 0 1px 3px -1px;
@@ -676,9 +705,8 @@ header.style-3 div.menu-fixed::before {
                         <div class="menu-left">
                             <ul>
                                 <li><a href="<?=$domaine?>" class="<?php if($lien == 'home' || $lien == ''){echo 'current';} ;?>">Accueil</a></li>
-                                <li><a href=""  class="<?php if($lien == 'bureau'){echo 'current';} ;?>">Bureau</a></li>
                                 <li><a href="<?=$domaine?>/a-propos"  class="<?php if($lien == 'a-propos'){echo 'current';} ;?>">A propos</a></li>
-                                <li><a href=""  class="<?php if($lien == 'contact'){echo 'current';} ;?>">Contact</a></li>
+                                <li><a href="<?=$domaine?>/contact"  class="<?php if($lien == 'contact'){echo 'current';} ;?>">Contact</a></li>
                                 <li><a href="<?=$domaine?>/blog"  class="<?php if($lien == 'blog'){echo 'current';} ;?>">Actualité</a></li>
                                 <li><a href="<?=$domaine?>/events"  class="<?php if($lien == 'events'){echo 'current';} ;?>">Galerie</a></li>
                                 <li><a href="<?=$domaine?>/aeek-tv"  class="<?php if($lien == 'aeek-tv'){echo 'current';} ;?>">Aeek tv</a></li>
