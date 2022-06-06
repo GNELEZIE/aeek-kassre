@@ -37,20 +37,19 @@
 <link href="<?=$asset?>/plugins/lity/dist/lity.css" rel="stylesheet"/>
 <style>
 
-/*#flash-infos li {*/
-    /*color: #4e4e4e;*/
-    /*background: #F2F2F2;*/
-    /*overflow: hidden;*/
-    /*height: 80px;*/
-    /*padding: 10px;*/
-    /*line-height: 30px;*/
-    /*list-style: none;*/
-    /*font-size: 24px;*/
-    /*text-align: left;*/
-    /*border-bottom: 1px dotted #2c8162;*/
-/*}*/
-
-
+.h-339{
+    height: 339px !important;
+}
+.ribban{
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #fff;
+    background: #ff0909;
+    padding: 4px 15px;
+    border-radius: 0 6px 0 50px;
+    border-top: 24px !important;
+}
 .box-card::after {
     display: block;
     position: absolute;
@@ -155,7 +154,13 @@ p, .p {
     color:#FF4500;
 width: 51px;
 }
-
+ .offre-icon{
+     object-fit: cover;
+     height: 90px;
+     width: 90px;
+     border-radius: 50px;
+     margin-top: 0;
+ }
 
 #flash-infos{
     height: 275px !important;
