@@ -6,9 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AEEK - KASSERE</title>
-
 <link rel="icon" href="<?=$asset?>/media/logoAEEK.png" type="image/x-icon">
-<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i%7CPoppins:300,400,500,600,700"
       rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Archivo:400,500,600,700|Oswald:200,300,400,500,600,700"
@@ -423,7 +421,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .banner-blog {
-    background-image: url(<?=$asset?>/media/aeek-2.jpeg) !important;
+    background-image: url(<?=$asset?>/media/sl1.jpg) !important;
     background-position: 50% 50%;
     background-size: cover;
     height: 600px !important;
