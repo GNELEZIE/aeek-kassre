@@ -34,6 +34,13 @@
 <!--<link href="--><?//=$asset?><!--/plugins/lity/assets/prism.css" media="all" rel="stylesheet" type="text/css">-->
 <link href="<?=$asset?>/plugins/lity/dist/lity.css" rel="stylesheet"/>
 <style>
+.bg-bleu-transparent{
+    background: #00bfff0d !important;
+}
+.ts-box{
+    background: #fff !important;
+    padding: 10px !important;
+}
 .input-styles{
     border: 2px solid #ced4da !important;
     box-shadow: none !important;

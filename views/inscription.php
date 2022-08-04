@@ -4,13 +4,12 @@ require_once 'layout/header.php';
 ?>
 
 
-<section class="contact padding-120">
+<section class="contact padding-120 bg-bleu-transparent">
     <div class="container">
         <div class="row">
             <div class="col-md-6 offset-3">
-                <div class="contact-form">
+                <div class="contact-form ts-box">
                     <h3 class="text-center">Inscription</h3>
-
                     <nav>
                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
                             <a href="javascript:void(0);" class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Email</a>
@@ -21,16 +20,20 @@ require_once 'layout/header.php';
                         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                             <form method="post" class="text-center pt-5">
                                 <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-xs-12">
+                                    <div class="col-md-12">
                                         <input type="text" name="name" placeholder="Nom & Prénom" class="contact-input input-styles">
                                     </div>
-                                    <div class="col-lg-6 col-md-6 col-xs-12">
+                                    <div class="col-md-12">
                                         <input type="email" name="email" placeholder="Email" class="contact-input input-styles">
                                     </div>
+                                    <div class="col-md-12">
+                                        <input type="password" name="password" placeholder="Mot de passe" class="contact-input input-styles">
+                                    </div>
+                                    <div class="col-md-12">
+                                        <input type="password" name="passwordC" placeholder="Confirmer mot de passe" class="contact-input input-styles">
+                                    </div>
                                 </div>
-                                <input type="text" name="subject" placeholder="Sujet" class="contact-input input-styles">
-                                <textarea rows="5" class="contact-input input-styles">Massage</textarea>
-                                <button class="btn-transparence-orange">Envoyer maintenant</button>
+                                <button class="btn-transparence-orange">S'inscrire maintenant</button>
                             </form>
 
                         </div>
