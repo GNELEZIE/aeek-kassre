@@ -29,16 +29,59 @@
 <link href="<?=$asset?>/css/btn.css" rel="stylesheet">
 <link href="<?=$asset?>/plugins/ticker/css/main.css" rel="stylesheet">
 <link href="<?=$asset?>/plugins/sweetalert/sweet-alert.css" rel="stylesheet" />
-<link href="<?=$asset?>/plugins/animate/animate.min.css" rel="stylesheet" />
+<link href="cplugins/animate/animate.min.css" rel="stylesheet" />
 <!--<link href="--><?//=$asset?><!--/plugins/lity/assets/style.css" media="all" rel="stylesheet" type="text/css">-->
 <!--<link href="--><?//=$asset?><!--/plugins/lity/assets/prism.css" media="all" rel="stylesheet" type="text/css">-->
 <link href="<?=$asset?>/plugins/lity/dist/lity.css" rel="stylesheet"/>
 <style>
+.text-right{
+    text-align : right !important;
+}
+.required:before {
+    content: "*";
+    color: red;
+}
+
+.w-70{
+    width : 70% !important;
+}
+.w-30{
+    width : 30% !important;
+}
+
+.li-connect{
+    padding-right : 15px !important;
+}
+
+
+
+
+
+.bgimg1{
+    background: url("<?=$asset?>/img/bg/bg1.png") !important;
+}
 .bg-bleu-transparent{
     background: #00bfff0d !important;
 }
 .ts-box{
-    background: #fff !important;
+    background-color: #fff;
+    border-radius: 0.25rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 0.125rem 0.3125rem rgb(0 0 0 / 10%);
+    padding: 1.5rem;
+    position: relative;
+}
+.text-left{
+    text-align: left !important;
+}
+.input-register{
+    border: 2px solid #ced4da !important;
+    box-shadow: none !important;
+    background: none !important;
+    text-align: left !important;
+    cursor: auto;
+    border-radius: 6px;
+    width: 100% !important;
     padding: 10px !important;
 }
 .input-styles{
@@ -380,6 +423,22 @@ width: 51px;
     color: #FFFFFF !important;
     border: none !important;
 }
+.font-sery{
+    font-family: 'Archivo', sans-serif !important;
+}
+.radius-6{
+    border-radius: 6px !important;
+}
+.btn-orange{
+    background: #ff5c00 !important;
+    color: #FFFFFF !important;
+    border: none !important;
+}
+.btn-orange:hover{
+    background: #fff !important;
+    color: #ff5c00 !important;
+    border: 1px solid #ff5c00 !important;
+}
 .sidebar form input{
     border-radius: 6px !important;
     border: 2px solid #040404 !important;
@@ -706,11 +765,11 @@ header.style-3 div.menu-fixed::before {
                     <i class="fa fa-bars" style="color: #000;"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <div class="main-menu w-80" style="">
+                    <div class="main-menu w-70" style="">
                         <div class="menu-left">
                             <ul>
                                 <li><a href="<?=$domaine?>" class="<?php if($lien == 'home' || $lien == ''){echo 'current';} ;?>">Accueil</a></li>
-                                <li><a href="<?=$domaine?>/a-propos"  class="<?php if($lien == 'a-propos'){echo 'current';} ;?>">A propos</a></li>
+<!--                                <li><a href="--><?//=$domaine?><!--/a-propos"  class="--><?php //if($lien == 'a-propos'){echo 'current';} ;?><!--">A propos</a></li>-->
                                 <li><a href="<?=$domaine?>/contact"  class="<?php if($lien == 'contact'){echo 'current';} ;?>">Contact</a></li>
                                 <li><a href="<?=$domaine?>/blog"  class="<?php if($lien == 'blog'){echo 'current';} ;?>">Actualité</a></li>
                                 <li><a href="<?=$domaine?>/events"  class="<?php if($lien == 'events'){echo 'current';} ;?>">Galerie</a></li>
@@ -721,10 +780,23 @@ header.style-3 div.menu-fixed::before {
                             </ul>
                         </div>
                     </div>
-                    <div class="main-menu w-20">
+                    <div class="main-menu w-30">
                         <div class="menu-right">
-                            <ul class="header-cart-ticket-option">
-                                <li><a href="<?=$domaine?>/inscription" class="menu-button btn-transparence-orange">Inscription</a></li>
+                            <ul>
+                                <?php
+                                if(isset($_SESSION['membreaeek'])){
+                                    ?>
+                                    <li class="li-connect"><a href="<?=$domaine?>/logout">Déconnexion</a></li>
+                                    <li><a href="<?=$domaine?>/compte/dashboard" class="menu-button btn-transparence-orange">Mon compte</a></li>
+                                <?php
+                                }else{
+                                  ?>
+                                    <li class="li-connect"><a href="<?=$domaine?>/connexion">Connexion</a></li>
+                                    <li><a href="<?=$domaine?>/inscription" class="menu-button btn-transparence-orange">Inscription</a></li>
+                                <?php
+                                }
+
+                                ?>
                             </ul>
                         </div>
                     </div>
